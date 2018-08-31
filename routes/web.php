@@ -16,3 +16,7 @@ Route::get('/', 'PagesController@index')->name('Front page of website');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
