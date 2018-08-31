@@ -25,19 +25,30 @@
 			<nav id="nav-menu-container">
 				<ul class="nav-menu">
 					@if(Auth::guest())
-					<li class="menu-active"><a href="/">Home</a></li>
-					<li><a href="/tools">Tools</a></li>
-					<li><a href="/books/">Books</a></li>
-					<li><a href="/projects">Projects</a></li>
-					{{-- <li class="menu-has-children"><a href="/blog">Blog</a></li>     --}}
-					<li><a href="contact.html">Contact</a></li>
-					<li class="menu-has-children"><a href="">Members</a>
-						<ul>
-							<li><a href="/login">Login</a></li>
-							<li><a href="/register">Register</a></li>
-						</ul>
-					</li>
+						<li><a href="/">Home</a></li>
+						<li><a href="/tools">Tools</a></li>
+						<li><a href="/community">Community</a></li>
+						<li><a href="/recommended">Recommended</a></li>
+						{{-- <li class="menu-has-children"><a href="/blog">Blog</a></li>     --}}
+						<li><a href="/contact">Contact</a></li>
+						<li class="menu-has-children"><a href="">Members</a>
+							<ul>
+								<li><a href="/login">Login</a></li>
+								<li><a href="/register">Register</a></li>
+							</ul>
+						</li>
 					@else
+						<li><a href="/">Home</a></li>
+						<li><a href="/tools">Tools</a></li>
+						<li><a href="/community">Community</a></li>
+						<li><a href="/recommended">Recommended</a></li>
+						{{-- <li class="menu-has-children"><a href="/blog">Blog</a></li>     --}}
+						<li class="menu-has-children"><a href="">Members</a>
+							<ul>
+								<li><a href="/profile">Profile</a></li>
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
 					@endif
 				</ul>
 			</nav><!-- #nav-menu-container -->		    		
