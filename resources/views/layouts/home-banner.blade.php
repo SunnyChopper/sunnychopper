@@ -9,7 +9,7 @@
 					Smarter with Technology			
 				</h1>
 				<p class="text-white mx-auto">
-					My name is Sunny Singh and I go by the name of SunnyChopper online. My goal in life is to understand technology and use it to help others and one way to do this is to help you understand technology so you can better use it.</p>
+					My name is Sunny Singh and my goal is to help new entrepreneurs work smarter and take more action with the power of software and improving technology.</p>
 				</p>
 				<a href="#" class="primary-btn header-btn text-uppercase mt-10">Explore Software Tools</a>
 			</div>											
