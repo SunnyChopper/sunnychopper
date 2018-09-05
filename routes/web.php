@@ -11,12 +11,11 @@
 |
 */
 
+// Public site
 Route::get('/', 'PagesController@index')->name('Front page of website');
+Route::get('/tools', 'PagesController@tools');
+Route::get('/community', 'PagesController@community');
+Route::get('/recommended', 'PagesController@recommended');
+Route::get('/contact', 'PagesController@contact');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

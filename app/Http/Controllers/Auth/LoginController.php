@@ -18,6 +18,13 @@ class LoginController extends Controller
     |
     */
 
+    public function showLoginForm() {
+        // Page data
+        $page_header = "Login";
+
+        return view('auth.login')->with('page_header', $page_header);
+    }
+
     use AuthenticatesUsers;
 
     /**
