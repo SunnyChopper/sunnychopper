@@ -7,6 +7,23 @@ use App\NextVideoVote;
 
 class VotingController extends Controller
 {
+	/* Public CRUD Functions */
+	public function create(Request $data) {
+		if ($this->create_voting($data)) {
+			return "Successful";
+		} else {
+			return "Failed";
+		}
+	}
+
+	public function update(Request $data) {
+		if ($this->update_voting($data)) {
+			return "Successful";
+		} else {
+			return "Failed";
+		}
+	}
+
 	/* Private CRUD Functions */
 	private function create_voting(Request $data) {
 		// Get relevant data
