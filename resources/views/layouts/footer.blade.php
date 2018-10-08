@@ -32,10 +32,11 @@
 					<h6>Let's Connect</h6>
 					<p>Follow for more business tips and tricks</p>
 					<div class="footer-social d-flex align-items-center">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-behance"></i></a>
+						<li><a href="https://www.facebook.com/xSunnyChopper/"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://www.twitter.com/SunnyChopper"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://www.instagram.com/SunnyChopper"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://www.snapchat.com/add/SunnyChopper"><i class="fa fa-snapchat"></i></a></li>
+						<li><a href="https://www.youtube.com/channel/UCB05e10psLXdPzJnC-sWjEA"><i class="fa fa-youtube"></i></a></li>
 					</div>
 				</div>
 			</div>							

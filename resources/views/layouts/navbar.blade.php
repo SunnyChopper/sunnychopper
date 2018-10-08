@@ -7,11 +7,11 @@
 	  			</div>
 	  			<div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
 	  				<ul>
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-						<li><a href="#"><i class="fa fa-snapchat"></i></a></li>
-						<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+						<li><a href="https://www.facebook.com/xSunnyChopper/"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://www.twitter.com/SunnyChopper"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://www.instagram.com/SunnyChopper"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://www.snapchat.com/add/SunnyChopper"><i class="fa fa-snapchat"></i></a></li>
+						<li><a href="https://www.youtube.com/channel/UCB05e10psLXdPzJnC-sWjEA"><i class="fa fa-youtube"></i></a></li>
 	  				</ul>			
 	  			</div>
 	  		</div>			  					
@@ -26,6 +26,7 @@
 				<ul class="nav-menu">
 					@if(Auth::guest())
 						<li><a href="/">Home</a></li>
+						<li><a href="/blog">Free Stuff</a></li>
 						<li><a href="/tools">Tools</a></li>
 						<li><a href="/community">Community</a></li>
 						<li><a href="/recommended">Recommended</a></li>
@@ -39,6 +40,7 @@
 						</li>
 					@else
 						<li><a href="/dashboard">Dashboard</a></li>
+						<li><a href="/blog">Free Stuff</a></li>
 						<li><a href="/tools">Tools</a></li>
 						<li><a href="/community">Community</a></li>
 						<li><a href="/recommended">Recommended</a></li>

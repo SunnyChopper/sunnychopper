@@ -154,6 +154,16 @@
 	margin-top: 8px;
 }
 
+.blog-entry {
+	background-color: white;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+}
+
+.blog-entry:hover {
+	background-color: #EAEAEA;
+}
+
 @media only screen and (max-width : 480px) {
 	.benefit-box {
 		margin-top: 16px;
@@ -161,6 +171,19 @@
 		border: 2px solid #EEEEEE;
 		border-radius: 8px;
 	}
+}
+
+/*-------------------------------*\
+	Images
+\*-------------------------------*/
+
+.regular-image {
+	width: 100%;
+	height: auto;
+}
+
+.rounded-image {
+	border-radius: 8px;
 }
 
 /*-------------------------------*\
@@ -173,6 +196,19 @@
 	margin-right: auto;
 }
 
+/*-------------------------------*\
+	Special Links
+\*-------------------------------*/
+
+.blog-link {
+	color: black;
+	text-decoration: none;
+}
+
+.blog-link:hover {
+	color: black;
+}
+
 
 /*-------------------------------*\
 	Special Rows
@@ -180,4 +216,16 @@
 
 .light-gray-row {
 	background-color: #EFEFEF;
+}
+
+/*-------------------------------*\
+	Special Text
+\*-------------------------------*/
+
+.success-message {
+	color: green;
+}
+
+.error-message {
+	color: red;
 }
