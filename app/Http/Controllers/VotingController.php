@@ -51,7 +51,7 @@ class VotingController extends Controller
 		$selected_option = $data->selected_option;
 
 		// Update the NextVideoVote object and save
-		$next_video_vote = NewVideoVote::where('id', $id)->first();
+		$next_video_vote = NextVideoVote::where('id', $id)->first();
 		$next_video_vote->option = $selected_option;
 		return $next_video_vote->save();
 	}

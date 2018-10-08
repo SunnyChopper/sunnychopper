@@ -18,4 +18,7 @@ Route::get('/community', 'PagesController@community');
 Route::get('/recommended', 'PagesController@recommended');
 Route::get('/contact', 'PagesController@contact');
 
+// Members site
+Route::get('/dashboard', 'MembersController@dashboard');
+
 Auth::routes();
