@@ -21,9 +21,10 @@ Route::get('/blog', 'PagesController@blog');
 
 // Blog
 Route::get('/post/{post_id}/{slug}', 'BlogController@read');
+Route::get('/post/new', 'BlogController@new');
+Route::post('/post/create', 'BlogController@create');
 
 // Members site
-Route::get('/dashboard', 'MembersController@dashboard');
 Route::get('/logout', 'MembersController@logout');
 
 // Voting

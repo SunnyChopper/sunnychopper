@@ -39,7 +39,7 @@
 							</ul>
 						</li>
 					@else
-						<li><a href="/dashboard">Dashboard</a></li>
+						<li><a href="/">Home</a></li>
 						<li><a href="/blog">Free Stuff</a></li>
 						<li><a href="/tools">Tools</a></li>
 						<li><a href="/community">Community</a></li>
