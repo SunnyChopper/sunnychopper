@@ -8,13 +8,42 @@
 		<!-- Author Meta -->
 		<meta name="author" content="colorlib">
 		<!-- Meta Description -->
-		<meta name="description" content="">
+		<meta name="description" content="Helping entrepreneurs work smarter with the power of technology.">
 		<!-- Meta Keyword -->
-		<meta name="keywords" content="">
+		<meta name="keywords" content="tech entrepreneur, technology entrepreneur, tech business, how to become a tech entrepreneur">
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
 		<title>SunnyChopper</title>
+
+		<!-- Social Media Meta Tags -->
+		@if(isset($og))
+			<meta property="og:title" content="{{ $og->title }}">
+			<meta property="og:description" content="{{ $og->description }}">
+			<meta property="og:image" content="{{ $og->image }}">
+			<meta property="og:url" content="{{ $og->url }}">
+			<meta property="og:site_name" content="SunnyChopper.com">
+		@else
+			<meta property="og:title" content="SunnyChopper">
+			<meta property="og:description" content="Helping entrepreneurs work smarter with the power of technology.">
+			<meta property="og:image" content="{{ URL::asset('img/Website-Preview-Image.jpg') }}">
+			<meta property="og:url" content="http://sunnychopper.com">
+			<meta property="og:site_name" content="SunnyChopper.com">
+		@endif
+
+		@if(isset($twitter))
+			<meta name="twitter:title" content="{{ $twitter->title }}">
+			<meta name="twitter:description" content="{{ $twitter->description }}">
+			<meta name="twitter:image" content="{{ $twitter->image }}">
+			<meta name="twitter:card" content="summary_large_image">
+			<meta name="twitter:site" content="@sunnychopper">
+		@else
+			<meta name="twitter:title" content="SunnyChopper">
+			<meta name="twitter:description" content="Helping entrepreneurs work smarter with the power of technology.">
+			<meta name="twitter:image" content="{{ URL::asset('img/Website-Preview-Image.jpg') }}">
+			<meta name="twitter:card" content="summary_large_image">
+			<meta name="twitter:site" content="@sunnychopper">
+		@endif
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 		<script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=xq9hzw57g3zkmakqchurmgo9hnprenmg1yopn8cirghphy2x'></script>
