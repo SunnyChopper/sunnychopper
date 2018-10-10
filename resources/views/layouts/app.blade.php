@@ -26,7 +26,7 @@
 		@else
 			<meta property="og:title" content="SunnyChopper">
 			<meta property="og:description" content="Helping entrepreneurs work smarter with the power of technology.">
-			<meta property="og:image" content="{{ URL::asset('img/Website-Preview-Image.jpg') }}">
+			<meta property="og:image" content="{{ URL::asset('img/Website-Preview-Image.JPG') }}">
 			<meta property="og:url" content="http://sunnychopper.com">
 			<meta property="og:site_name" content="SunnyChopper.com">
 		@endif
@@ -40,7 +40,7 @@
 		@else
 			<meta name="twitter:title" content="SunnyChopper">
 			<meta name="twitter:description" content="Helping entrepreneurs work smarter with the power of technology.">
-			<meta name="twitter:image" content="{{ URL::asset('img/Website-Preview-Image.jpg') }}">
+			<meta name="twitter:image" content="{{ URL::asset('img/Website-Preview-Image.JPG') }}">
 			<meta name="twitter:card" content="summary_large_image">
 			<meta name="twitter:site" content="@sunnychopper">
 		@endif
