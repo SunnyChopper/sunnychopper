@@ -27,7 +27,7 @@
 			<meta property="og:title" content="SunnyChopper">
 			<meta property="og:description" content="Helping entrepreneurs work smarter with the power of technology.">
 			<meta property="og:image" content="{{ URL::asset('img/Website-Preview-Image.JPG') }}">
-			<meta property="og:url" content="http://sunnychopper.com">
+			<meta property="og:url" content="https://sunnychopper.com">
 			<meta property="og:site_name" content="SunnyChopper.com">
 		@endif
 
