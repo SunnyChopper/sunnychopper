@@ -11,7 +11,7 @@
 				<p class="text-white mx-auto">
 					My name is Sunny Singh and my goal is to help new entrepreneurs work smarter and take more action with the power of software and improving technology.</p>
 				</p>
-				<a href="#" class="primary-btn header-btn text-uppercase mt-10">Explore Software Tools</a>
+				<a href="/tools" class="primary-btn header-btn text-uppercase mt-10">Explore Software Tools</a>
 			</div>											
 		</div>
 	</div>

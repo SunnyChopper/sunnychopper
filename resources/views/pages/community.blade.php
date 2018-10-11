@@ -97,12 +97,12 @@
 					<hr />
 					<ul class="list-group">
 						<li class="list-group-item">
-							<h5>PMF Tool</h5>
-							<p class="mt-2 mb-0">This tool will help you test business ideas and opt-ins quickly.</p>
+							<h5>OptinDev</h5>
+							<p class="mt-2 mb-0">This software tool will help you grow your contact list through email marketing or Facebook Messenger marketing. This tool allows you to rapidly create opt-in pages based on psychology and best converting opt-in pages.</p>
 						</li>
 						<li class="list-group-item">
 							<h5>SunnyChopper.com</h5>
-							<p class="mt-2 mb-0">This website right here. Still developing it.</p>
+							<p class="mt-2 mb-0">This website right here. Still developing it. Adding more features to it nearly everday to deliver the best content experience possible.</p>
 						</li>
 					</ul>
 				</div>

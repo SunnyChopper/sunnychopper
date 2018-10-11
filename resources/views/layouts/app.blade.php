@@ -18,10 +18,10 @@
 
 		<!-- Social Media Meta Tags -->
 		@if(isset($og))
-			<meta property="og:title" content="{{ $og->title }}">
-			<meta property="og:description" content="{{ $og->description }}">
-			<meta property="og:image" content="{{ $og->image }}">
-			<meta property="og:url" content="{{ $og->url }}">
+			<meta property="og:title" content="{{ $og["title"] }}">
+			<meta property="og:description" content="{{ $og["description"] }}">
+			<meta property="og:image" content="{{ $og"image"] }}">
+			<meta property="og:url" content="{{ $og["url"] }}">
 			<meta property="og:site_name" content="SunnyChopper.com">
 		@else
 			<meta property="og:title" content="SunnyChopper">
@@ -32,9 +32,9 @@
 		@endif
 
 		@if(isset($twitter))
-			<meta name="twitter:title" content="{{ $twitter->title }}">
-			<meta name="twitter:description" content="{{ $twitter->description }}">
-			<meta name="twitter:image" content="{{ $twitter->image }}">
+			<meta name="twitter:title" content="{{ $twitter["title"] }}">
+			<meta name="twitter:description" content="{{ $twitter["description"] }}">
+			<meta name="twitter:image" content="{{ $twitter["image"] }}">
 			<meta name="twitter:card" content="summary_large_image">
 			<meta name="twitter:site" content="@sunnychopper">
 		@else
