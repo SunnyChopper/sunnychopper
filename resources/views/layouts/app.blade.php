@@ -20,7 +20,7 @@
 		@if(isset($og))
 			<meta property="og:title" content="{{ $og["title"] }}">
 			<meta property="og:description" content="{{ $og["description"] }}">
-			<meta property="og:image" content="{{ $og"image"] }}">
+			<meta property="og:image" content="{{ $og["image"] }}">
 			<meta property="og:url" content="{{ $og["url"] }}">
 			<meta property="og:site_name" content="SunnyChopper.com">
 		@else
