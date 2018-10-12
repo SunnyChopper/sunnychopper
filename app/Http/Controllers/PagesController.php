@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Post;
+use App\Recommended;
 
 use App\Custom\VideoVoting;
 
@@ -45,7 +46,11 @@ class PagesController extends Controller
 		// Page data
 		$page_header = "Recommended Content";
 
-		return view('pages.recommended')->with('page_header', $page_header);
+		// Get recommended items
+		$recommended = Recommended::paginate(25);
+
+
+		return view('pages.recommended')->with('page_header', $page_header)->with('recommended', $recommended);
 	}
 
 	public function contact() {
