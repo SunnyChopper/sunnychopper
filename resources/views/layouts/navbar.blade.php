@@ -26,7 +26,13 @@
 				<ul class="nav-menu">
 					@if(Auth::guest())
 						<li><a href="/">Home</a></li>
-						<li><a href="/blog">Free Stuff</a></li>
+						<li class="menu-has-children"><a href="">Free Stuff</a>
+							<ul>
+								<li><a href="/blog">Tips and Advice</a></li>
+								<li><a href="/books">Book Summaries</a></li>
+							</ul>
+						</li>
+
 						<li><a href="/tools">Tools</a></li>
 						<li><a href="/community">Community</a></li>
 						<li><a href="/recommended">Recommended</a></li>

@@ -69,4 +69,11 @@ class PagesController extends Controller
 
 		return view('pages.blog')->with('page_header', $page_header)->with('posts', $posts);
 	}
+
+	public function books() {
+		// Page data
+		$page_header = "Book Summaries";
+
+		return view('pages.books')->with('page_header', $page_header);
+	}
 }

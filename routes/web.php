@@ -18,6 +18,7 @@ Route::get('/community', 'PagesController@community');
 Route::get('/recommended', 'PagesController@recommended');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/blog', 'PagesController@blog');
+Route::get('/books', 'PagesController@books');
 
 // Blog
 Route::get('/post/{post_id}/{slug}', 'BlogController@read');
