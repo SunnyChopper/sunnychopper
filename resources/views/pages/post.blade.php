@@ -11,7 +11,9 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 col-xs-12">
-				{!! $post->post !!}
+				<div id="post-body">
+					{!! $post->post !!}
+				</div>
 			</div>
 		</div>
 
