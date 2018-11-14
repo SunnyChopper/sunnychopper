@@ -9,6 +9,7 @@ use App\Post;
 use App\Recommended;
 
 use App\Custom\VideoVoting;
+use App\Custom\MailHelper;
 
 class PagesController extends Controller
 {
@@ -58,6 +59,45 @@ class PagesController extends Controller
 		$page_header = "Contact";
 
 		return view('pages.contact')->with('page_header', $page_header);
+	}
+
+	public function submit_contact(Request $data) {
+		// Get data
+		$name = $data->name;
+		$email = $data->email;
+		$message = $data->message;
+
+		// Create body
+		$body = "<div style='width: 70%; background-color: black; display: block; margin-left: auto; margin-right: auto; padding: 16px; border-top: 2px solid #EAEAEA; border-left: 2px solid #EAEAEA; border-right: 2px solid #EAEAEA; border-top-left-radius: 5px; border-top-right-radius: 5px;'>";
+		$body .= "<h3 style='color: white; text-align: center;'>Contact Form Submission</h3>";
+		$body .= "</div>";
+		$body .= "<div style='width: 70%; background-color: white; display: block; margin-right: auto; margin-left: auto; padding: 16px; border-left: 2px solid #EAEAEA; border-right: 2px solid #EAEAEA;'>";
+		$body .= "<p><b>Name:</b> " . $name . "</p>";
+		$body .= "<p><b>Email:</b> " . $email . "</p>";
+		$body .= "<p><b>Message:</b> " . $message . "</p>";
+		$body .= "</div>";
+		$body .= "<div style='width: 70%; background-color: #EAEAEA; display: block; margin-left: auto; margin-right: auto; padding: 8px; border-left 2px solid #EAEAEA; border-right: 2px solid #EAEAEA; border-bottom: 2px solid #EAEAEA;'>";
+		$body .= "<p style='text-align: center;'><small>SunnyChopper</small></p>";
+		$body .= "</div>";
+
+		// Create mail data
+		$email_data = array(
+			"recipient_first_name" => "Sunny",
+			"recipient_last_name" => "Singh",
+			"recipient_email" => "ishy.singh@gmail.com",
+			"sender_first_name" => "Sunny",
+			"sender_last_name" => "Singh",
+			"sender_email" => "ishy.singh@gmail.com",
+			"subject" => "New Contact Form Submission",
+			"body" => $body
+		);
+
+		// Create email helper class
+		$mail_helper = new MailHelper($email_data);
+		$mail_helper->send_contact_email();
+
+		// Send back
+		return redirect()->back()->with('success', 'Successfully sent contact submission');
 	}
 
 	public function blog() {
