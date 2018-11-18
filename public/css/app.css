@@ -6,6 +6,10 @@
 	margin: 0px;
 }
 
+.m-2 {
+	margin: 2px;
+}
+
 .m-4 {
 	margin: 4px;
 }
@@ -32,6 +36,10 @@
 
 .mt-0 {
 	margin-top: 0px;
+}
+
+.mt-2 {
+	margin-top: 2px;
 }
 
 .mt-4 {
@@ -125,6 +133,14 @@
 	padding: 36px;
 	border-radius: 8px;
 	border-bottom: 3px solid #E2E2E2;
+}
+
+.activity-box {
+	padding: 16px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	border: 2px solid #EAEAEA;
+	border-radius: 8px;
 }
 
 .grey-box {

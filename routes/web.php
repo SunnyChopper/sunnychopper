@@ -20,6 +20,7 @@ Route::get('/contact', 'PagesController@contact');
 Route::post('/contact/submit', 'PagesController@submit_contact');
 Route::get('/blog', 'PagesController@blog');
 Route::get('/books', 'PagesController@books');
+Route::get('/profile', 'PagesController@profile');
 
 // Blog
 Route::get('/post/{post_id}/{slug}', 'BlogController@read');

@@ -105,7 +105,7 @@ class PagesController extends Controller
 		$page_header = "Free Stuff";
 
 		// Get latest posts
-		$posts = Post::paginate(10);
+		$posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
 		return view('pages.blog')->with('page_header', $page_header)->with('posts', $posts);
 	}
@@ -115,5 +115,13 @@ class PagesController extends Controller
 		$page_header = "Book Summaries";
 
 		return view('pages.books')->with('page_header', $page_header);
+	}
+
+	public function profile() {
+		// Page data
+		// TODO: Dynamically get name
+		$page_header = "Sunny Singh";
+
+		return view('pages.profile')->with('page_header', $page_header);
 	}
 }
