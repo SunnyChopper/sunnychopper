@@ -12,7 +12,7 @@
 					@if(Auth::guest())
 						<p class="text-center mt-8 mb-0">You must be logged in order to vote for the next video.</p>
 					@else
-						@if($has_user_voted == false)
+						@if($has_user_voted == 0)
 						<form id="submit_voting_form" action="/vote/create" method="post">
 							{{ csrf_field() }}
 							<input type="hidden" name="voting_id" value="{{ $current_video->id }}">
@@ -76,8 +76,10 @@
 								</div>
 							</div>
 						</form>
-						@else
+						@elseif($has_user_voted == 1)
 							<p class="text-center mb-0 mt-4">You have already voted for this week.</p>
+						@elseif($has_user_voted == 2)
+							<p class="text-center mb-0 mt-4">No active poll right now.</p>
 						@endif
 
 						<div class="row mt-8 mb-0">
@@ -97,12 +99,12 @@
 					<hr />
 					<ul class="list-group">
 						<li class="list-group-item">
-							<h5>OptinDev</h5>
-							<p class="mt-2 mb-0">This software tool will help you grow your contact list through email marketing or Facebook Messenger marketing. This tool allows you to rapidly create opt-in pages based on psychology and best converting opt-in pages.</p>
-						</li>
-						<li class="list-group-item">
 							<h5>SunnyChopper.com</h5>
 							<p class="mt-2 mb-0">This website right here. Still developing it. Adding more features to it nearly everday to deliver the best content experience possible.</p>
+						</li>
+						<li class="list-group-item">
+							<h5>Influencer Monetization Program</h5>
+							<p class="mt-2 mb-0">Brands and influencers out there have a lot of attention but may not have the resources or the know-how to monetize that audience. That's where I can come in and help them by building apps, websites, and full digital marketing strategies.</p>
 						</li>
 					</ul>
 				</div>

@@ -32,11 +32,15 @@ class VideoVoting {
 		$current_video = NextVideo::whereDate('start_time', '<=', $today)->whereDate('end_time' , '>=', $today)->first();
 
 		// Check if video vote exists
-		$vote_exists = NextVideoVote::where('voting_id', $current_video->id)->where('user_id', $this->user_id)->count();
-		if ($vote_exists > 0) {
-			return true;
+		if ($current_video != NULL) {
+			$vote_exists = NextVideoVote::where('voting_id', $current_video->id)->where('user_id', $this->user_id)->count();
+			if ($vote_exists > 0) {
+				return 1;
+			} else {
+				return 0;
+			}
 		} else {
-			return false;
+			return 2;
 		}
 	}
 }

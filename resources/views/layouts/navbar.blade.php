@@ -38,7 +38,7 @@
 						<li><a href="/recommended">Recommended</a></li>
 						{{-- <li class="menu-has-children"><a href="/blog">Blog</a></li>     --}}
 						<li><a href="/contact">Contact</a></li>
-						<li class="menu-has-children"><a href="">Members</a>
+						<li class="menu-has-children"><a href="/login">Members</a>
 							<ul>
 								<li><a href="/login">Login</a></li>
 								<li><a href="/register">Register</a></li>
