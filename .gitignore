@@ -4,7 +4,6 @@
 /storage/*.key
 /storage/*
 /storage
-/vendor
 /.idea
 /.vscode
 /.vagrant
