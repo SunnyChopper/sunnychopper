@@ -11,11 +11,11 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="col-lg-8 offset-lg-2 col-md-12 col-sm-12 col-xs-12">
 				<ul class="list-group">
 					@foreach($recommended as $r)
-						<li class="list-group-item">
-							@if($r->media_type == 0)
+						<li class="list-group-item" style="padding: 24px;">
+							@if($r->media_type == 1)
 								<div class="row">
 									<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 										<img src="{{ $r->movie_image_link }}" class="regular-image">
@@ -26,15 +26,16 @@
 										<a href="{{ $r->movie_amazon_link }}" class="btn btn-primary">Get on Amazon</a>
 									</div>
 								</div>
-							@elseif($r->media_type == 1)
+							@elseif($r->media_type == 2)
 								<div class="row">
 									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<span class="badge badge-primary mb-8" style="font-size: 12px;">Article</span>
 										<h4>{{ $r->article_title }}</h4>
-										<p>{{ $r->article_description }}</p>
-										<a href="{{ $r->article_link }}" class="btn btn-primary">View Article</a>
+										<p class="mb-2">{{ $r->article_description }}</p>
+										<a href="{{ $r->article_link }}" class="genric-btn primary rounded small">View Article</a>
 									</div>
 								</div>
-							@elseif($r->media_type == 2)
+							@elseif($r->media_type == 3)
 								<div class="row">
 									<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 										<img src="{{ $r->book_image_link }}" class="regular-image">

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Recommended;
 
+use App\Custom\RecommendedHelper;
 use App\Custom\VideoVoting;
 use App\Custom\MailHelper;
 
@@ -48,8 +49,8 @@ class PagesController extends Controller
 		$page_header = "Recommended Content";
 
 		// Get recommended items
-		$recommended = Recommended::paginate(25);
-
+		$r_helper = new RecommendedHelper();
+		$recommended = $r_helper->get_recommended_items_with_pagination(25);
 
 		return view('pages.recommended')->with('page_header', $page_header)->with('recommended', $recommended);
 	}

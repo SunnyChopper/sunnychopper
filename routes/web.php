@@ -12,7 +12,7 @@
 */
 
 // Public site
-Route::get('/', 'PagesController@index')->name('Front page of website');
+Route::get('/', 'PagesController@index');
 Route::get('/tools', 'PagesController@tools');
 Route::get('/community', 'PagesController@community');
 Route::get('/recommended', 'PagesController@recommended');
@@ -21,6 +21,17 @@ Route::post('/contact/submit', 'PagesController@submit_contact');
 Route::get('/blog', 'PagesController@blog');
 Route::get('/books', 'PagesController@books');
 Route::get('/profile', 'PagesController@profile');
+
+// Admin backend site
+Route::get('/admin', 'AdminController@login');
+Route::post('/admin/login', 'AdminController@authenticate_user');
+Route::get('/admin/dashboard', 'AdminController@dashboard');
+Route::get('/admin/recommend/new', 'AdminController@new_recommended');
+Route::get('/admin/recommend/view', 'AdminController@view_recommended');
+
+// Recommended functions
+Route::post('/admin/recommend/create', 'RecommendedController@create');
+Route::post('/admin/recommend/delete', 'RecommendedController@delete');
 
 // Blog
 Route::get('/post/{post_id}/{slug}', 'BlogController@read');
