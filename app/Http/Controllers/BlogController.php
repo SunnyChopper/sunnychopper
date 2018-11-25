@@ -54,6 +54,6 @@ class BlogController extends Controller
     	$post->save();
 
     	// Redirect
-    	return redirect(url('/blog'));
+    	return redirect(url('/admin/posts/view'));
     }
 }

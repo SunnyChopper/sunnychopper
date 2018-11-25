@@ -28,6 +28,10 @@ Route::post('/admin/login', 'AdminController@authenticate_user');
 Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/admin/recommend/new', 'AdminController@new_recommended');
 Route::get('/admin/recommend/view', 'AdminController@view_recommended');
+Route::get('/admin/posts/new', 'AdminController@new_blog_post');
+
+// Blog post functions
+Route::post('/admin/posts/create', 'BlogController@create');
 
 // Recommended functions
 Route::post('/admin/recommend/create', 'RecommendedController@create');
@@ -35,8 +39,6 @@ Route::post('/admin/recommend/delete', 'RecommendedController@delete');
 
 // Blog
 Route::get('/post/{post_id}/{slug}', 'BlogController@read');
-Route::get('/post/new', 'BlogController@new');
-Route::post('/post/create', 'BlogController@create');
 
 // Members site
 Route::get('/logout', 'MembersController@logout');

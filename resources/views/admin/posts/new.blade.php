@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 col-xs-12">
 				<div class="well">
-				<form action="/post/create" method="post" id="new_blog_post_form">
+				<form action="/admin/posts/create" method="post" id="new_blog_post_form">
 					{{ csrf_field() }}
 					<div class="form-group">
 						<h5>Title:</h5>

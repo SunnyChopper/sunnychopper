@@ -91,6 +91,16 @@ class AdminController extends Controller
 		return view('admin.recommended.new')->with('page_header', $page_header);
     }
 
+    public function new_blog_post() {
+        // Page data
+        $page_header = "New Blog Post";
+
+        // Protect admin backend
+        $this->protect();
+
+        return view('admin.posts.new')->with('page_header', $page_header);
+    }
+
     /* Private functions */
     private function protect() {
     	// Check to see if already logged in
