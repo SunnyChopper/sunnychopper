@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Newsletter;
+
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -72,6 +74,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // Register user in MailChimp
+        Newsletter::subscribeOrUpdate($data['email'], ['FNAME'=>$data["first_name"], 'LNAME'=>$data["last_name"]]);
+
         return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
