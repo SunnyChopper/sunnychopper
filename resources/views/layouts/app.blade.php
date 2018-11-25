@@ -3,16 +3,28 @@
 	<head>
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
+
 		<!-- Author Meta -->
 		<meta name="author" content="colorlib">
+
 		<!-- Meta Description -->
 		<meta name="description" content="Helping entrepreneurs work smarter with the power of technology.">
+
 		<!-- Meta Keyword -->
 		<meta name="keywords" content="tech entrepreneur, technology entrepreneur, tech business, how to become a tech entrepreneur">
+		
 		<!-- meta character set -->
 		<meta charset="UTF-8">
+
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ URL::asset('apple-touch-icon.png') }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ URL::asset('favicon-32x32.png') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ URL::asset('favicon-16x16.png') }}">
+		<link rel="manifest" href="{{ URL::asset('site.webmanifest') }}">
+		<link rel="mask-icon" href="{{ URL::asset('safari-pinned-tab.svg') }}" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#00a300">
+		<meta name="theme-color" content="#ffffff">
+
 		<!-- Site Title -->
 		<title>SunnyChopper</title>
 

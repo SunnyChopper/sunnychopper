@@ -44,9 +44,36 @@
 								<li><a href="/register">Register</a></li>
 							</ul>
 						</li>
+					@elseif(Session::has('admin_login'))
+						@if(Session::get('admin_login') == true)
+							<li><a href="/admin/dashboard">Dashboard</a></li>
+							<li class="menu-has-children">
+								<a href="/admin/recommend/view">Blog Posts</a>
+								<ul>
+									<li><a href="/admin/posts/view">View Blog Posts</a></li>
+									<li><a href="/admin/posts/new">New Blog Post</a></li>
+									<li><a href="/admin/posts/stats">Blog Post Stats</a></li>
+								</ul>
+							</li>
+							<li class="menu-has-children">
+								<a href="/admin/recommend/view">Recommendations</a>
+								<ul>
+									<li><a href="/admin/recommend/view">View Recommended Items</a></li>
+									<li><a href="/admin/recommend/new">New Recommendation</a></li>
+								</ul>
+							</li>
+							<li class="menu-has-children">
+								<a href="/members/profile/settings">{{ Auth::user()->first_name }}</a>
+								<ul>
+									<li><a href="/admin/settings">Settings</a></li>
+									<li><a href="/admin/logout">Logout</a></li>
+								</ul>
+							</li>
+						@endif
 					@else
 						<li><a href="/">Home</a></li>
-						<li><a href="/blog">Free Stuff</a></li>
+						<li><a href="/blog">Free Knowledge</a></li>
+						<li><a href="/books">Book Summaries</a></li>
 						<li><a href="/tools">Tools</a></li>
 						<li><a href="/community">Community</a></li>
 						<li><a href="/recommended">Recommended</a></li>
