@@ -128,7 +128,7 @@
 
 				// Article fields
 				$("input[name=article_title]").attr('required', false);
-				$("input[name=article_image_link]").attr('required', false);
+				$("input[name=article_link]").attr('required', false);
 				$("input[name=article_description]").attr('required', false);
 
 				// Book fields
@@ -152,7 +152,7 @@
 
 				// Article fields
 				$("input[name=article_title]").attr('required', true);
-				$("input[name=article_image_link]").attr('required', true);
+				$("input[name=article_link]").attr('required', true);
 				$("input[name=article_description]").attr('required', false);
 
 				// Book fields
@@ -175,7 +175,7 @@
 
 				// Article fields
 				$("input[name=article_title]").attr('required', false);
-				$("input[name=article_image_link]").attr('required', false);
+				$("input[name=article_link]").attr('required', false);
 				$("input[name=article_description]").attr('required', false);
 
 				// Book fields
