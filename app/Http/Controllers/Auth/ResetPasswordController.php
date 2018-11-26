@@ -20,12 +20,28 @@ class ResetPasswordController extends Controller
 
     use ResetsPasswords;
 
+    public function showResetForm() {
+        // Page data
+        $page_header = "Reset Password";
+
+        return view('auth.passwords.reset')->with('page_header', $page_header);
+    }
+
+    public function handle($request, Closure $next, $guard = null)
+    {
+        if (Auth::guard($guard)->check()) {
+            return redirect('/');
+        }
+ 
+        return "Hey";
+    }
+
     /**
      * Where to redirect users after resetting their password.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/community/';
 
     /**
      * Create a new controller instance.
