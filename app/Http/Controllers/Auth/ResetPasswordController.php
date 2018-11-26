@@ -20,20 +20,13 @@ class ResetPasswordController extends Controller
 
     use ResetsPasswords;
 
-    public function showResetForm() {
-        // Page data
-        $page_header = "Reset Password";
-
-        return view('auth.passwords.reset')->with('page_header', $page_header);
-    }
-
-    public function handle($request, Closure $next, $guard = null)
+    public function showResetForm(Request $request, $token = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/');
-        }
- 
-        return "Hey";
+        $page_header = "Reset Your Password";
+
+        return view('auth.passwords.reset')->with(
+            ['token' => $token, 'page_header' => $page_header, 'email' => $request->email]
+        );
     }
 
     /**
