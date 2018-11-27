@@ -17,6 +17,11 @@
 						<li class="list-group-item" style="padding: 24px;">
 							@if($r->media_type == 1)
 								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+										<span class="badge badge-secondary mb-8" style="font-size: 12px;">Movie</span>
+									</div>
+								</div>
+								<div class="row">
 									<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 										<img src="{{ $r->movie_image_link }}" class="regular-image">
 									</div>
@@ -36,6 +41,11 @@
 									</div>
 								</div>
 							@elseif($r->media_type == 3)
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+										<span class="badge badge-dark mb-8" style="font-size: 12px;">Book</span>
+									</div>
+								</div>
 								<div class="row">
 									<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 										<img src="{{ $r->book_image_link }}" class="regular-image">
