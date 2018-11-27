@@ -28,7 +28,7 @@
 									<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
 										<h4>{{ $r->movie_title }}</h4>
 										<p>{{ $r->movie_description }}</p>
-										<a href="{{ $r->movie_amazon_link }}" class="btn btn-primary">Get on Amazon</a>
+										<a href="{{ $r->movie_amazon_link }}" class="genric-btn primary rounded small">Get on Amazon</a>
 									</div>
 								</div>
 							@elseif($r->media_type == 2)
@@ -53,7 +53,7 @@
 									<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
 										<h4>{{ $r->book_title }}</h4>
 										<p>{{ $r->book_description }}</p>
-										<a href="{{ $r->book_amazon_link }}" class="btn btn-primary">Get on Amazon</a>
+										<a href="{{ $r->book_amazon_link }}" class="genric-btn primary rounded small">Get on Amazon</a>
 									</div>
 								</div>
 							@endif
