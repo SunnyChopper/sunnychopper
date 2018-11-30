@@ -48,7 +48,7 @@
 	<script type="text/javascript">
 		tinymce.init({
 			selector: '#blog_textarea',
-			plugins: "advcode"
+			plugins: "code"
 		});
 	</script>
 @endsection
