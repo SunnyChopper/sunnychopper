@@ -48,7 +48,7 @@
 	<script type="text/javascript">
 		tinymce.init({
 			selector: '#blog_textarea',
-			plugins: "a11ychecker, advcode, linkchecker, powerpaste, tinydrive, tinymcespellchecker"
+			plugins: "advcode"
 		});
 	</script>
 @endsection
