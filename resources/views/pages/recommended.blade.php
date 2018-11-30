@@ -48,7 +48,7 @@
 								</div>
 								<div class="row">
 									<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-										<img src="{{ $r->book_image_link }}" class="regular-image">
+										<img src="{{ $r->book_image_link }}" class="regular-image mb-8">
 									</div>
 									<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
 										<h4>{{ $r->book_title }}</h4>

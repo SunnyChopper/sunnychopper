@@ -42,3 +42,13 @@
 		</div>
 	</div>
 @endsection
+
+@section('page_js')
+	<script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=xq9hzw57g3zkmakqchurmgo9hnprenmg1yopn8cirghphy2x'></script>
+	<script type="text/javascript">
+		tinymce.init({
+			selector: '#blog_textarea',
+			plugins: "a11ychecker, advcode, linkchecker, powerpaste, tinydrive, tinymcespellchecker"
+		});
+	</script>
+@endsection

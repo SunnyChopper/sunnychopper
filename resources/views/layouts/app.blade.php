@@ -58,13 +58,7 @@
 		@endif
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-		<script src='https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=xq9hzw57g3zkmakqchurmgo9hnprenmg1yopn8cirghphy2x'></script>
-		<script>
-			tinymce.init({
-				selector: '#blog_textarea',
-				plugins: "a11ychecker, advcode, linkchecker, powerpaste, tinydrive, tinymcespellchecker"
-			});
-		</script>
+		
 
 		<link rel="stylesheet" href="{{ URL::asset('css/linearicons.css') }}">
 		<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">

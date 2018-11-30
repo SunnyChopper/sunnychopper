@@ -36,7 +36,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6 col-6">
 							<div class="box square">
 								<div class="content">
-									<a href="/admin/blog/new" class="blue-square-button">Blog Post</a>
+									<a href="/admin/posts/new" class="blue-square-button">Blog Post</a>
 								</div>
 							</div>
 						</div>

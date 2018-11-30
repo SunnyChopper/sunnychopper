@@ -41,7 +41,11 @@ class AdminController extends Controller
     	if (User::where('username', strtolower($username))->count() > 0) {
     		$user = User::where('username', strtolower($username))->first();
     		$hashed_pwd = Hash::make($password);
-    		if ($hashed_pwd == $user->password) {
+            $user_data = array(
+                'username' => $username,
+                'password' => $password
+            ); 
+    		if (Auth::attempt($user_data)) {
     			// Check for backend auth
     			if ($user->backend_auth == 0) {
     				return redirect()->back()->with('admin_login_error', 'You are not authorized to access this area.');
@@ -129,7 +133,7 @@ class AdminController extends Controller
     	}
     }
 
-    private function login_user($data) {
+    private function login_user() {
     	// Get data
     	$user = Auth::user();
     	$user_id = $user->id;
