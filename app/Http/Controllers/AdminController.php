@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 use App\Custom\RecommendedHelper;
+use App\Custom\BlogPostHelper;
 
 use App\User;
 
@@ -95,6 +96,20 @@ class AdminController extends Controller
 		return view('admin.recommended.new')->with('page_header', $page_header);
     }
 
+    public function view_blog_posts() {
+        // Page data
+        $page_header = "Blog Posts";
+
+        // Protect admin backend
+        $this->protect();
+
+        // Get blog posts
+        $blog_post_helper = new BlogPostHelper();
+        $posts = $blog_post_helper->get_active_posts();
+
+        return view('admin.posts.view')->with('page_header', $page_header)->with('posts', $posts);
+    }
+
     public function new_blog_post() {
         // Page data
         $page_header = "New Blog Post";
@@ -103,6 +118,20 @@ class AdminController extends Controller
         $this->protect();
 
         return view('admin.posts.new')->with('page_header', $page_header);
+    }
+
+    public function edit_blog_post($post_id) {
+        // Page data
+        $page_header = "Edit Blog Post";
+
+        // Protect admin backend
+        $this->protect();
+
+        // Get post
+        $blog_helper = new BlogPostHelper($post_id);
+        $post = $blog_helper->read_post();
+
+        return view('admin.posts.edit')->with('page_header', $page_header)->with('post', $post);
     }
 
     /* Private functions */
