@@ -45,6 +45,14 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
+     <link>https://sunnychopper.com/recommended</link>
+     <title>SunnyChopper</title>
+     <description>Helping entrepreneurs work smarter with the power of technology.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
      <link>https://sunnychopper.com/contact</link>
      <title>SunnyChopper</title>
      <description>Helping entrepreneurs work smarter with the power of technology.</description>
@@ -69,7 +77,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://sunnychopper.com/post/1/purpose-of-humanity-to-launch-the-next-phase-of-evolution</link>
+     <link>https://sunnychopper.com/post/8/four-ways-building-an-audience-can-help-business-generate-more-revenue</link>
      <title>SunnyChopper</title>
      <description>Helping entrepreneurs work smarter with the power of technology.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -77,7 +85,7 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://sunnychopper.com/post/2/your-home-will-become-your-personal-assistant-and-its-dangers</link>
+     <link>https://sunnychopper.com/post/7/applications-of-ai-in-business-top-5-ways-big-business-is-using-ai</link>
      <title>SunnyChopper</title>
      <description>Helping entrepreneurs work smarter with the power of technology.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -85,7 +93,15 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://sunnychopper.com/post/3/how-amazon-uses-ai-to-help-build-their-ecommerce-empire-how-you-can-apply-that</link>
+     <link>https://sunnychopper.com/post/6/compress-time-get-more-work-done-less-time</link>
+     <title>SunnyChopper</title>
+     <description>Helping entrepreneurs work smarter with the power of technology.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://sunnychopper.com/post/5/growing-business-using-machine-learning-the-three-main-categories</link>
      <title>SunnyChopper</title>
      <description>Helping entrepreneurs work smarter with the power of technology.</description>
      <ror:updatePeriod></ror:updatePeriod>
@@ -101,7 +117,23 @@
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 <item>
-     <link>https://sunnychopper.com/post/5/growing-business-using-machine-learning-the-three-main-categories</link>
+     <link>https://sunnychopper.com/post/3/how-amazon-uses-ai-to-help-build-their-ecommerce-empire-how-you-can-apply-that</link>
+     <title>SunnyChopper</title>
+     <description>Helping entrepreneurs work smarter with the power of technology.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://sunnychopper.com/post/2/your-home-will-become-your-personal-assistant-and-its-dangers</link>
+     <title>SunnyChopper</title>
+     <description>Helping entrepreneurs work smarter with the power of technology.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://sunnychopper.com/post/1/purpose-of-humanity-to-launch-the-next-phase-of-evolution</link>
      <title>SunnyChopper</title>
      <description>Helping entrepreneurs work smarter with the power of technology.</description>
      <ror:updatePeriod></ror:updatePeriod>
