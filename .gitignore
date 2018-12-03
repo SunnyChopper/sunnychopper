@@ -15,3 +15,8 @@ yarn-error.log
 vendor
 /vendor
 /vendor/*
+.DS_Store
+public/.DS_Store
+storage/framework/*
+storage/logs/*
+storage/app/*

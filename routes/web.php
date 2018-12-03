@@ -29,9 +29,13 @@ Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/admin/recommend/new', 'AdminController@new_recommended');
 Route::get('/admin/recommend/view', 'AdminController@view_recommended');
 Route::get('/admin/posts/new', 'AdminController@new_blog_post');
+Route::get('/admin/posts/view', 'AdminController@view_blog_posts');
+Route::get('/admin/posts/edit/{post_id}', 'AdminController@edit_blog_post');
 
 // Blog post functions
 Route::post('/admin/posts/create', 'BlogController@create');
+Route::post('/admin/posts/update', 'BlogController@update');
+Route::post('/admin/posts/delete', 'BlogController@delete');
 
 // Recommended functions
 Route::post('/admin/recommend/create', 'RecommendedController@create');
