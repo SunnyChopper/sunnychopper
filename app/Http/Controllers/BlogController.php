@@ -37,7 +37,7 @@ class BlogController extends Controller
     	$title = $data->title;
     	$slug = $data->slug;
     	$featured_image_url = $data->featured_image_url;
-    	$post = $data->post;
+    	$post = $data->post_body;
 
     	// Blog helper
         $blog_helper = new BlogPostHelper();

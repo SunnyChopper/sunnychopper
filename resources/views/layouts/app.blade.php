@@ -62,6 +62,8 @@
 		<link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css') }}">		
 		<link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
 		<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('css/linearicons.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
 
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52756389-17"></script>
@@ -91,10 +93,5 @@
 		@yield('content')
 		@include('layouts.footer')
 		@include('layouts.js')
-
-		
-		
-		<link rel="stylesheet" href="{{ URL::asset('css/linearicons.css') }}">
-		<link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}">
 	</body>
 </html>
