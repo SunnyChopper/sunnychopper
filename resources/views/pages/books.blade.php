@@ -37,6 +37,14 @@
 				<p class="text-center mb-16">The internet has changed drastically since this book came out, however, the marketing and sales principles still hold true today.</p>
 				<a href="https://drive.google.com/open?id=1AyO4B2VIssBnfkBSDXDBWzbGxfVG99T-NhmePL9UdDo" class="btn btn-primary center-button">View Summary</a>
 			</div>
+
+			<div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-8 mb-8">
+				<img src="https://images-na.ssl-images-amazon.com/images/I/41JJND7xGSL._SX330_BO1,204,203,200_.jpg" class="regular-image">
+				<h4 class="text-center mt-16">Top of Mind</h4>
+				<hr />
+				<p class="text-center mb-16">Achieving top of mind status requires you to deliver valuable content to your target audience. This book is great for personal branding.</p>
+				<a href="https://drive.google.com/open?id=1lNfqjMok7PWAMcjMXFnp0KAMMzexU79YpDdA1U-BGTY" class="btn btn-primary center-button">View Summary</a>
+			</div>
 		</div>
 	</div>
 @endsection

@@ -218,6 +218,7 @@
 #post-body > ul {
 	list-style-type: circle;
 	margin-left: 32px;
+	margin-bottom: 32px;
 }
 
 #post-body > ul > li > p {
