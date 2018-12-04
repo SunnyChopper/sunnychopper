@@ -221,6 +221,11 @@
 	margin-bottom: 32px;
 }
 
+#post-body > ol {
+	margin-left: 32px;
+	margin-bottom: 32px;
+}
+
 #post-body > ul > li > p {
 	font-size: 18px;
 	line-height: 32px;
@@ -228,7 +233,21 @@
 	font-family: 'Helvetica', serif;
 }
 
+#post-body > ol > li > p {
+	font-size: 18px;
+	line-height: 32px;
+	color: black;
+	font-family: 'Helvetica', serif;
+}
+
 #post-body > ul > li {
+	font-size: 18px;
+	line-height: 32px;
+	color: black;
+	font-family: 'Helvetica', serif;
+}
+
+#post-body > ol > li {
 	font-size: 18px;
 	line-height: 32px;
 	color: black;

@@ -45,6 +45,14 @@
 				<p class="text-center mb-16">Achieving top of mind status requires you to deliver valuable content to your target audience. This book is great for personal branding.</p>
 				<a href="https://drive.google.com/open?id=1lNfqjMok7PWAMcjMXFnp0KAMMzexU79YpDdA1U-BGTY" class="btn btn-primary center-button">View Summary</a>
 			</div>
+
+			<div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-8 mb-8">
+				<img src="https://images-na.ssl-images-amazon.com/images/I/41PKWD36-hL._SX331_BO1,204,203,200_.jpg" class="regular-image">
+				<h4 class="text-center mt-16">Peak Performance</h4>
+				<hr />
+				<p class="text-center mb-16">Learn how to avoid burnout and how to achieve success faster. This book gives the scientific evidence behind winning.</p>
+				<a href="https://drive.google.com/open?id=1w5f-ZNj7K8739sgTAzvL_l9q6S6o4LH6_sNqoixeGXY" class="btn btn-primary center-button">View Summary</a>
+			</div>
 		</div>
 	</div>
 @endsection
