@@ -65,7 +65,7 @@
 	}
 
 	function subscribeUserToPush() {
-		getSWRegistration().then(function(registration) {
+		navigator.serviceWorker.ready.then((registration) => {
 			console.log(registration);
 			const subscribeOptions = {
 				userVisibleOnly: true,
@@ -75,27 +75,27 @@
 		}).then(function(pushSubscription) {
 			console.log('Received PushSubscription: ', JSON.stringify(pushSubscription));
 			sendSubscriptionToBackEnd(pushSubscription);
-			return pushSubscription;
 		});
 	}
 
 	function sendSubscriptionToBackEnd(subscription) {
+		const token = document.querySelector('meta[name=csrf-token]').getAttribute('content');
+
 		return fetch('/push/subscribe', {
 			method: 'POST',
 			headers: {
-				'Content-Type': 'application/json'
+				'Accept' : 'application/json',
+				'Content-Type': 'application/json',
+				'X-CSRF-Token': token
 			},
 			body: JSON.stringify(subscription)
-		}).then(function(response) {
-			if (!response.ok) {
-				throw new Error('Bad status code from server.');
-			}
-			return response.json();
-		}).then(function(responseData) {
-			if (!(responseData.data && responseData.data.success)) {
-				throw new Error('Bad response from server.');
-			}
-		});
+		}).then((res) => {
+            return res.json();
+        }).then((res) => {
+            console.log(res)
+        }).catch((err) => {
+            console.log(err)
+        });
 	}
 
 	function enableNotifications(){
