@@ -36,9 +36,10 @@
 		}).then(function(permissionResult) {
 			if (permissionResult !== 'granted') {
 				throw new Error('We weren\'t granted permission.');
-		} else {
+			} else {
 			subscribeUserToPush();
-		}});
+			}
+		});
 	}
 
 	function urlBase64ToUint8Array(base64String) {
@@ -101,8 +102,6 @@
 		//check permission for notification/ask
 		askPermission();
 	}
-
-	enableNotifications();
 
 	registerServiceWorker();
 
