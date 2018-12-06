@@ -59,4 +59,6 @@
             </div>
         </div>
     </div>
+
+    @include('layouts.push-notification-js')
 @endsection
