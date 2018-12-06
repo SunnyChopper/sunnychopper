@@ -16,7 +16,7 @@ class PushController extends Controller
     	$this->middleware('auth');
     }
 
-    public function store(Request $data) {
+    public function store(Request $request) {
     	$this->validate($request,[
             'endpoint'    => 'required',
             'keys.auth'   => 'required',
