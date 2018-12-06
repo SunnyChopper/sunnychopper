@@ -12,6 +12,9 @@
 */
 
 // Public site
+Route::get('/test', function() {
+	phpinfo();
+});
 Route::get('/', 'PagesController@index');
 Route::get('/tools', 'PagesController@tools');
 Route::get('/community', 'PagesController@community');

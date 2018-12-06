@@ -60,5 +60,7 @@
         </div>
     </div>
 
-    @include('layouts.push-notification-js')
+    @if(!Auth::guest())
+        @include('layouts.push-notification-js')
+    @endif
 @endsection
