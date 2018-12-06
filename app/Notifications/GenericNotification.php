@@ -9,6 +9,8 @@ use Illuminate\Notifications\Messages\MailMessage;
 use NotificationChannels\WebPush\WebPushMessage;
 use NotificationChannels\WebPush\WebPushChannel;
 
+use Carbon\Carbon;
+
 class GenericNotification extends Notification
 {
     use Queueable;
@@ -47,7 +49,7 @@ class GenericNotification extends Notification
             'title' => 'Hello from Laravel!',
             'body' => 'Thank you for using our application.',
             'action_url' => 'https://laravel.com',
-            'created' => Carbon\Carbon::now()->toIso8601String()
+            'created' => Carbon::now()->toIso8601String()
         ];
     }
 
