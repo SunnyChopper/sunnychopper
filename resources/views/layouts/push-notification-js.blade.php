@@ -52,12 +52,13 @@
 
 	function getSWRegistration(){
 		var promise = new Promise(function(resolve, reject) {
-		// do a thing, possibly async, then…
-		if (_registration != null) {
-			resolve(_registration);
-		} else {
-			reject(Error("It broke"));
-		}});
+			// do a thing, possibly async, then…
+			if (_registration != null) {
+				resolve(_registration);
+			} else {
+				reject(Error("It broke"));
+			}
+		});
 		return promise;
 	}
 

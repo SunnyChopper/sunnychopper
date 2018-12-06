@@ -39,7 +39,7 @@ class GenericNotification extends Notification
     public function toWebPush($notifiable, $notification)
     {
         $time = \Carbon\Carbon::now();
-        return WebPushMessage::create()
+        return (new WebPushMessage)
             ->title($this->title)
             ->icon(url('img/Profile.jpg'))
             ->body($this->body);
