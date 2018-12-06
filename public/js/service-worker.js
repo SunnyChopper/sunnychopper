@@ -6,7 +6,7 @@ self.addEventListener('push', function (e) {
         return;
     }
     if (e.data) {
-    	console.log(e.data);
+    	console.log(e.data.json());
         var msg = e.data.json();
         
         e.waitUntil(self.registration.showNotification(msg.title, {
