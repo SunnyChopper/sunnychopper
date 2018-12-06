@@ -1,7 +1,6 @@
 <script type="text/javascript">
 	function sendNotification(){
 		var data = new FormData();
-		data.append('_token', '{{ csrf_token() }}')
 		data.append('title', 'Test');
 		data.append('body', 'I am currently testing this feature.');
 		var xhr = new XMLHttpRequest();
