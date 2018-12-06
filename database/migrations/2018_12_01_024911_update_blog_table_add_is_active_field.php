@@ -26,7 +26,7 @@ class UpdateBlogTableAddIsActiveField extends Migration
     public function down()
     {
         Schema::table('blog', function (Blueprint $table) {
-            $table->deleteColumn('is_active');
+            $table->dropColumn('is_active');
         });
     }
 }
