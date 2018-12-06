@@ -80,14 +80,11 @@
 	}
 
 	function sendSubscriptionToBackEnd(subscription) {
-		const token = document.querySelector('meta[name=csrf-token]').getAttribute('content');
-
 		return fetch('/push/subscribe', {
 			method: 'POST',
 			headers: {
 				'Accept' : 'application/json',
-				'Content-Type': 'application/json',
-				'X-CSRF-Token': token
+				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(subscription)
 		}).then((res) => {
