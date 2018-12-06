@@ -24,7 +24,6 @@ class PagesController extends Controller
 	public function test() {
 		$user = User::find(1);
 		$user->notify(new GenericNotification('Test', 'Test title'));
-		return redirect()->back();
 	}
 
 	public function index() {
