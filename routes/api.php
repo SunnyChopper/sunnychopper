@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 
+use Notification;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,7 +32,10 @@ Route::post('/save-subscription/{id}',function($id, Request $request){
 Route::post('/send-notification/{id}', function($id, Request $request){
 	$user = \App\User::find(1);
 	
-	$user->notify(new \App\Notifications\GenericNotification($request->title, $request->body));
+	$user->notify(new \App\Notifications\GenericNotification());
+
+	Notification::send($user, new \App\Notifications\GenericNotification());
+	
 	return response()->json([
 		'success' => true
 	]);
