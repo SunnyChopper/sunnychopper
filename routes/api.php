@@ -28,9 +28,9 @@ Route::post('/save-subscription/{id}',function($id, Request $request){
 });
 
 Route::post('/send-notification/{id}', function($id, Request $request){
-	$user = \App\User::findOrFail($id);
+	$user = \App\User::find(1);
 	
-	request()->user()->notify(new \App\Notifications\GenericNotification($request->title, $request->body));
+	$user->notify(new \App\Notifications\GenericNotification($request->title, $request->body));
 	return response()->json([
 		'success' => true
 	]);
