@@ -106,7 +106,7 @@
 
 	enableNotifications();
 
-	sendNotification();
-
 	registerServiceWorker();
+
+	sendNotification();
 </script>
