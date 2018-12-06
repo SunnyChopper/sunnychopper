@@ -15,7 +15,7 @@
 Route::get('/test', function() {
 	phpinfo();
 });
-Route::get('/push-test', 'PagesController@test');
+Route::get('/push-test', 'PagesController@test')->name('push_test');
 
 Route::get('/', 'PagesController@index');
 Route::get('/tools', 'PagesController@tools');

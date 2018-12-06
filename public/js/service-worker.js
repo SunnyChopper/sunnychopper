@@ -1,12 +1,15 @@
-self.addEventListener('push', function(event) {
-	if (event.data) {
-		var data = event.data.json();
-		self.registration.showNotification(data.title,{
-			body: data.body,
-			icon: data.icon
-		});
-		console.log('This push event has data: ', event.data.text());
-	} else {
-		console.log('This push event has no data.');
-	}
+self.addEventListener('push', function (e) {
+    if (!(self.Notification && self.Notification.permission === 'granted')) {
+        //notifications aren't supported or permission not granted!
+        return;
+    }
+    if (e.data) {
+        var msg = e.data.json();
+        console.log(msg)
+        e.waitUntil(self.registration.showNotification(msg.title, {
+            body: msg.body,
+            icon: msg.icon,
+            image: msg.icon
+        }));
+    }
 });
