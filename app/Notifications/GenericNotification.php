@@ -38,7 +38,7 @@ class GenericNotification extends Notification
 
     public function toWebPush($notifiable, $notification)
     {
-        return (new WebPushMessage)
+        return WebPushMessage::create()
             ->title($this->title)
             ->body($this->body);
     }
