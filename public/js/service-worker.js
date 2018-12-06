@@ -9,9 +9,7 @@ self.addEventListener('push', function (e) {
         var msg = e.data.json();
         console.log(msg);
         e.waitUntil(self.registration.showNotification(msg.title, {
-            body: msg.body,
-            icon: msg.icon,
-            image: msg.icon
+            body: msg.body
         }));
     }
 });
