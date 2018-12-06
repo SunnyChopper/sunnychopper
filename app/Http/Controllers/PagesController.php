@@ -23,6 +23,7 @@ class PagesController extends Controller
 
 	public function test() {
 		Notification::send(User::all(), new GenericNotification('Test', 'Test title'));
+		return redirect()->back();
 	}
 
 	public function index() {

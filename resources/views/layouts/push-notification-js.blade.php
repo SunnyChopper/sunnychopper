@@ -65,7 +65,7 @@
 	}
 
 	function subscribeUserToPush() {
-		navigator.serviceWorker.ready.then((registration) => {
+		getSWRegistration().then(function(registration) {
 			console.log(registration);
 			const subscribeOptions = {
 				userVisibleOnly: true,
@@ -75,6 +75,7 @@
 		}).then(function(pushSubscription) {
 			console.log('Received PushSubscription: ', JSON.stringify(pushSubscription));
 			sendSubscriptionToBackEnd(pushSubscription);
+			return pushSubscription;
 		});
 	}
 
