@@ -101,6 +101,8 @@
 		askPermission();
 	}
 
+	enableNotifications();
+
 	sendNotification();
 
 	registerServiceWorker();
