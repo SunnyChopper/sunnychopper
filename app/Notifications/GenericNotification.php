@@ -13,7 +13,6 @@ use Carbon\Carbon;
 
 class GenericNotification extends Notification
 {
-    use Queueable;
     public $title, $body;
 
     /**
