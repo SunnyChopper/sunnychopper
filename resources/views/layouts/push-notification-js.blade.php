@@ -14,7 +14,7 @@
 	}
 
 	var _registration = null;
-	
+
 	function registerServiceWorker() {
 		return navigator.serviceWorker.register('js/service-worker.js').then(function(registration) {
 			console.log('Service worker successfully registered.');
@@ -80,7 +80,7 @@
 	}
 
 	function sendSubscriptionToBackEnd(subscription) {
-		return fetch('/api/save-subscription/{{Auth::user()->id}}', {
+		return fetch('/push/subscribe', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

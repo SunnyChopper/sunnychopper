@@ -46,6 +46,9 @@ Route::post('/admin/posts/delete', 'BlogController@delete');
 Route::post('/admin/recommend/create', 'RecommendedController@create');
 Route::post('/admin/recommend/delete', 'RecommendedController@delete');
 
+// Push notifications
+Route::post('/push/subscribe', 'PushController@store');
+
 // Blog
 Route::get('/post/{post_id}/{slug}', 'BlogController@read');
 
