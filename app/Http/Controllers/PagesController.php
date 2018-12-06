@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Notification;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,8 +14,18 @@ use App\Custom\RecommendedHelper;
 use App\Custom\VideoVoting;
 use App\Custom\MailHelper;
 
+use App\User;
+
+use App\Notifications\GenericNotification;
+
 class PagesController extends Controller
 {
+
+	public function test() {
+		Notification::send(User::all(), new GenericNotification('Test', 'Test title'));
+    	return redirect()->back();
+	}
+
 	public function index() {
 		return view('pages.index');
 	}

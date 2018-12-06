@@ -4,7 +4,6 @@
 		data.append('_token', '{{ csrf_token() }}')
 		data.append('title', 'Test');
 		data.append('body', 'I am currently testing this feature.');
-		console.log("Here");
 		var xhr = new XMLHttpRequest();
 		xhr.open('POST', "{{url('/api/send-notification/' . auth()->user()->id)}}", true);
 		xhr.onload = function () {
@@ -15,6 +14,7 @@
 	}
 
 	var _registration = null;
+	
 	function registerServiceWorker() {
 		return navigator.serviceWorker.register('js/service-worker.js').then(function(registration) {
 			console.log('Service worker successfully registered.');
