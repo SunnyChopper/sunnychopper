@@ -14,4 +14,8 @@
 <script src="{{ URL::asset('js/custom.js') }}"></script>
 <script src="{{ URL::asset('js/service-worker.js') }}"></script>
 
+@if(!Auth::guest())
+    @include('layouts.push-notification-js')
+@endif
+
 @yield('page_js')
