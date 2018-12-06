@@ -22,7 +22,7 @@ class PagesController extends Controller
 {
 
 	public function test() {
-		Notification::send(User::all(), new GenericNotification('Test', 'Test title'));
+		Notification::send(User::find(1), new GenericNotification('Test', 'Test title'));
 		return redirect()->back();
 	}
 
