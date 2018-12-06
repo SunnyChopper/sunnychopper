@@ -22,7 +22,7 @@ class PagesController extends Controller
 {
 
 	public function test() {
-		return Notification::send(User::all(),new GenericNotification("Test", "This is a test"));
+		return Notification::send(User::all(), new GenericNotification("Test", "This is a test"));
 	}
 
 	public function index() {

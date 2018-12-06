@@ -19,10 +19,9 @@ class GenericNotification extends Notification
      *
      * @return void
      */
-    public function __construct($title, $body)
+    public function __construct()
     {
-        $this->title = $title;
-        $this->body = $body;
+        //
     }
 
     /**
@@ -33,13 +32,36 @@ class GenericNotification extends Notification
      */
     public function via($notifiable)
     {
-        return [WebPushChannel::class];
+        return ['database', 'broadcast', WebPushChannel::class];
     }
 
+    /**
+     * Get the array representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return array
+     */
+    public function toArray($notifiable)
+    {
+        return [
+            'title' => 'Hello from Laravel!',
+            'body' => 'Thank you for using our application.',
+            'action_url' => 'https://laravel.com',
+            'created' => Carbon::now()->toIso8601String()
+        ];
+    }
+
+    /**
+     * Get the web push representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @param  mixed  $notification
+     * @return \Illuminate\Notifications\Messages\DatabaseMessage
+     */
     public function toWebPush($notifiable, $notification)
     {
         return (new WebPushMessage)
-            ->title($this->title)
-            ->body($this->body);
+            ->title('Hello from Laravel!')
+            ->body('Thank you for using our application.');
     }
 }
