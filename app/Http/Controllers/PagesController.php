@@ -22,8 +22,7 @@ class PagesController extends Controller
 {
 
 	public function test() {
-		$user = User::find(1);
-		$user->notify(new GenericNotification('Test', 'Test title'));
+		return Notification::send(User::all(),new GenericNotification("Test", "This is a test"));
 	}
 
 	public function index() {

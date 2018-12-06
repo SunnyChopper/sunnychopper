@@ -28,8 +28,6 @@ class PushController extends Controller
         $key = $request->keys['p256dh']; 
         $user = Auth::user();
         $user->updatePushSubscription($endpoint, $key, $token);
-
-        // $user->notify(new \App\Notifications\GenericNotification("Welcome To WebPush", "You will now get all of our push notifications"));
         
         return response()->json(['success' => true],200);
     }
