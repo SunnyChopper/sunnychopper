@@ -104,6 +104,4 @@
 	}
 
 	registerServiceWorker();
-
-	sendNotification();
 </script>
