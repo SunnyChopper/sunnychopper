@@ -20,9 +20,11 @@ class GenericNotification extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($title, $body, $action_url)
     {
-        //
+        $this->title = $title;
+        $this->body = $body;
+        $this->action_url = $action_url;
     }
 
     /**
@@ -45,9 +47,9 @@ class GenericNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'title' => 'Hello from Laravel!',
-            'body' => 'Thank you for using our application.',
-            'action_url' => 'https://laravel.com',
+            'title' => $this->title,
+            'body' => $this->body,
+            'action_url' => $this->action_url,
             'created' => Carbon::now()->toIso8601String()
         ];
     }
@@ -62,7 +64,8 @@ class GenericNotification extends Notification
     public function toWebPush($notifiable, $notification)
     {
         return (new WebPushMessage)
-            ->title('Hello from Laravel!')
-            ->body('Thank you for using our application.');
+            ->title($this->title)
+            ->body($this->body)
+            ->data(['url' => $this->action_url]);
     }
 }

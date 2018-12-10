@@ -12,11 +12,6 @@
 */
 
 // Public site
-Route::get('/test', function() {
-	phpinfo();
-});
-Route::get('/push-test', 'PagesController@test')->name('push_test');
-
 Route::get('/', 'PagesController@index');
 Route::get('/tools', 'PagesController@tools');
 Route::get('/community', 'PagesController@community');
@@ -57,5 +52,11 @@ Route::get('/logout', 'MembersController@logout');
 
 // Voting
 Route::post('/vote/create', 'VotingController@create');
+
+// Debugging
+Route::get('/push-test', 'PagesController@test')->name('push_test');
+Route::get('/php-info', function() {
+	phpinfo();
+});
 
 Auth::routes();
