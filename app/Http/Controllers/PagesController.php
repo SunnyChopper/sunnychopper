@@ -13,6 +13,7 @@ use App\Recommended;
 use App\Custom\RecommendedHelper;
 use App\Custom\VideoVoting;
 use App\Custom\MailHelper;
+use App\Custom\BlogPostHelper;
 
 use App\User;
 
@@ -117,7 +118,8 @@ class PagesController extends Controller
 		$page_header = "Free Stuff";
 
 		// Get latest posts
-		$posts = Post::orderBy('created_at', 'desc')->paginate(10);
+		$blog_helper = new BlogPostHelper();
+		$posts = $blog_helper->get_active_posts_with_pagination(10);
 
 		return view('pages.blog')->with('page_header', $page_header)->with('posts', $posts);
 	}

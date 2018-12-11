@@ -68,19 +68,19 @@ class BlogPostHelper {
 	}
 
 	public function get_active_posts() {
-		return Post::where('is_active', 1)->get();
+		return Post::where('is_active', 1)->orderBy('created_at', 'DESC')->get();
 	}
 
 	public function get_active_posts_with_pagination($paginate) {
-		return Post::where('is_active', 1)->paginate($paginate);
+		return Post::where('is_active', 1)->orderBy('created_at', 'DESC')->paginate($paginate);
 	}
 
 	public function get_deleted_posts() {
-		return Post::where('is_active', 0)->get();
+		return Post::where('is_active', 0)->orderBy('created_at', 'DESC')->get();
 	}
 
 	public function get_in_draft_posts() {
-		return Post::where('is_active', 2)->get();
+		return Post::where('is_active', 2)->orderBy('created_at', 'DESC')->get();
 	}
 }
 
