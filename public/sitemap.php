@@ -92,6 +92,3 @@ $size = sizeof($scanned);
 
 // Rename partial file to the real file name. `rename()` overwrites any existing files
 rename($tempfile, $file);
-
-// Apply permissions
-chmod($file, $permissions);
