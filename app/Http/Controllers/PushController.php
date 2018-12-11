@@ -23,7 +23,7 @@ class PushController extends Controller
 
     	// Store
     	$web_push_helper = new WebNotificationsHelper();
-    	$web_push_helper->store($web_push_data);
+    	$web_push_helper->store_notification_data($web_push_data);
 
     	// Return
     	return response()->json([
