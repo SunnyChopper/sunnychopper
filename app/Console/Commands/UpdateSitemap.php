@@ -31,6 +31,18 @@ class UpdateSitemap extends Command
     }
 
     /**
+     _ Define the application's command schedule.
+     _
+     _ @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     _ @return void
+     _*/
+    protected function schedule(Schedule $schedule)
+    {
+       //insert name and signature of you command and define the time of excusion
+        $schedule->command('sitemap:update')->everyDay();
+    }
+
+    /**
      * Execute the console command.
      *
      * @return mixed
