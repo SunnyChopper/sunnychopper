@@ -66,7 +66,7 @@ if (isset($args['pdf_index'])) {
 $start = microtime(true);
 
 //Setup file stream
-$tempfile = tempnam(sys_get_temp_dir(), 'public/sitemap.xml.');
+$tempfile = tempnam(sys_get_temp_dir(), '/public/sitemap.xml.');
 $file_stream = fopen($tempfile, "w") or die("Error: Could not create temporary file $tempfile" . "\n");
 
 fwrite($file_stream, $xmlheader);

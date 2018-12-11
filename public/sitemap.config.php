@@ -30,7 +30,7 @@ It is recommended you don't remove the above for future reference.
 $site = "https://www.sunnychopper.com/";
 
 // Default sitemap filename
-$file = "sitemap.xml";
+$file = "public/sitemap.xml";
 $permissions = 0777;
 
 // Depth of the crawl, 0 is unlimited
