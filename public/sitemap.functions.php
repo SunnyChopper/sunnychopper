@@ -4,9 +4,8 @@
 function flatten_url($url)
 {
     global $real_site;
-    $site = "https://www.sunnychopper.com/";
-    $real_site = domain_root($site);
-    $path = explode($real_site, $url)[0];
+    $real_site = domain_root($url);
+    $path = explode($real_site, $url)[1];
     return $real_site . remove_dot_seg($path);
 }
 
