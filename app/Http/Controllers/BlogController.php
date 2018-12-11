@@ -52,7 +52,7 @@ class BlogController extends Controller
 
         // Send out notifications
         $web_push = new WebNotificationsHelper();
-        $web_push->send_generic_notification_to_all($title, strip_tags($post), "https://www.sunnychopper.com/post/" . $post_id . "/" . $slug);
+        $web_push->send_generic_notification_to_all($title, substr(strip_tags($post), 0, 128), "https://www.sunnychopper.com/post/" . $post_id . "/" . $slug);
 
     	// Redirect
     	return redirect(url('/admin/posts/view'));
