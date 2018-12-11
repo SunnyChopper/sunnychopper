@@ -15,7 +15,7 @@
 	var _registration = null;
 
 	function registerServiceWorker() {
-		return navigator.serviceWorker.register('js/service-worker.js').then(function(registration) {
+		return navigator.serviceWorker.register('{{ URL::asset('js/service-worker.js') }}').then(function(registration) {
 			console.log('Service worker successfully registered.');
 			_registration = registration;
 			return registration;
