@@ -36,7 +36,7 @@
 			if (permissionResult !== 'granted') {
 				throw new Error('We weren\'t granted permission.');
 			} else {
-			subscribeUserToPush();
+				subscribeUserToPush();
 			}
 		});
 	}
@@ -66,7 +66,6 @@
 
 	function subscribeUserToPush() {
 		getSWRegistration().then(function(registration) {
-			console.log(registration);
 			const subscribeOptions = {
 				userVisibleOnly: true,
 				applicationServerKey: urlBase64ToUint8Array("{{env('VAPID_PUBLIC_KEY')}}")
@@ -103,4 +102,5 @@
 	}
 
 	registerServiceWorker();
+	enableNotifications();
 </script>

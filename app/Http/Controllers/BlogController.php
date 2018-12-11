@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Custom\BlogPostHelper;
+use App\Custom\WebNotificationsHelper;
 
 use App\Post;
 
@@ -48,6 +49,10 @@ class BlogController extends Controller
             "featured_image_url" => $featured_image_url
         );
         $post_id = $blog_helper->create_post($blog_data);
+
+        // Send out notifications
+        $web_push = new WebNotificationsHelper();
+        $web_push->send_generic_notification_to_all($title, strip_tags($post), "https://www.sunnychopper.com/post/" . $post_id . "/" . $slug);
 
     	// Redirect
     	return redirect(url('/admin/posts/view'));

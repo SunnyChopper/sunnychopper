@@ -14,7 +14,7 @@ class WebNotificationsHelper {
 	private $user_id;
 
 	/* Public functions */
-	public function __construct($user_id) {
+	public function __construct($user_id = 0) {
 		$this->user_id = $user_id;
 	}
 
@@ -29,12 +29,16 @@ class WebNotificationsHelper {
         $user->updatePushSubscription($endpoint, $key, $token);
 	}
 
-	public function send_generic_notification($user_id, $title, $body, $action_url) {
+	public function send_generic_notification_to_user($user_id, $title, $body, $action_url) {
 		// Get user
 		$user = User::find($user_id);
 
 		// Notify
 		$user->notify(new GenericNotification($title, $body, $action_url));
+	}
+
+	public function send_generic_notification_to_all($title, $body, $action_url) {
+		Notification::send(User::all(), new GenericNotification($title, $body, $action_url));
 	}
 }
 
