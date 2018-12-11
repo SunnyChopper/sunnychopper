@@ -8,10 +8,10 @@
 error_reporting(E_ALL);
 
 //Read global variables from config file
-require_once( 'sitemap.config.php' );
+include( 'sitemap.config.php' );
 
 // Include all functions
-require_once('sitemap.functions.php');
+include('sitemap.functions.php');
 
 //Default html header makes browsers ignore \n
 header("Content-Type: text/plain");
@@ -66,8 +66,8 @@ if (isset($args['pdf_index'])) {
 $start = microtime(true);
 
 //Setup file stream
-$tempfile = tempnam(sys_get_temp_dir(), 'sitemap.xml');
-$file_stream = fopen($tempfile, "w") or die("Error: Could not create temporary file $tempfile" . "\n");
+$tempfile = "public/sitemap.xml";
+$file_stream = fopen($tempfile, "wa+") or die("Error: Could not create temporary file $tempfile" . "\n");
 
 fwrite($file_stream, $xmlheader);
 
@@ -84,16 +84,7 @@ $real_site = domain_root($site);
 scan_url($real_site);
 
 // Finalize sitemap
-fwrite($file_stream, "</urlset>\n");
 fclose($file_stream);
-
-// Pretty-print sitemap
- if ((PHP_OS == 'WINNT') ? `where xmllint` : `which xmllint`) {
-    $responsevalue = exec('xmllint --format ' . $tempfile . ' -o ' . $tempfile . ' 2>&1', $discardedoutputvalue, $returnvalue);
-    if ($returnvalue) {
-        die("Error: " . $responsevalue . "\n");
-    }
-}
 
 // Generate and print out statistics
 $time_elapsed_secs = round(microtime(true) - $start, 2);

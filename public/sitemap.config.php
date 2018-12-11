@@ -54,7 +54,9 @@ $curl_validate_certificate = true;
 
 // The pages will be excluded from crawl and sitemap.
 // Use for exluding non-html files to increase performance and save bandwidth.
-$blacklist = array();
+$blacklist = array(
+	'https://www.facebook.com/'
+);
 
 // Enable this if your site do requires GET arguments to function
 $ignore_arguments = false;

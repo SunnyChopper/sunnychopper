@@ -1,11 +1,12 @@
 <?php
 
+require_once( 'sitemap.config.php' );
 
 function flatten_url($url)
 {
     global $real_site;
-    $real_site = domain_root($url);
-    $path = explode($real_site, $url)[1];
+    $site = domain_root("https://www.sunnychopper.com");
+    $path = explode($site, $url)[1];
     return $real_site . remove_dot_seg($path);
 }
 
@@ -136,7 +137,6 @@ function domain_root($href)
 }
 
 //The curl client is create outside of the function to avoid re-creating it for performance reasons
-
 function get_data($url)
 {
     global $curl_validate_certificate, $curl_client, $index_pdf, $crawler_user_agent, $enable_modified;
@@ -213,6 +213,9 @@ function get_links($html, $parent_url, $regexp)
         if ($matches[2]) {
             $found = array_map(function ($href) use (&$parent_url) {
                 global $real_site, $ignore_arguments;
+
+                $site = "https://www.sunnychopper.com/";
+                $real_site = domain_root($site);
 
                 if (strpos($href, "#") !== false) {
                     $href = preg_replace('/\#.*/', '', $href);
@@ -291,11 +294,11 @@ function scan_url($url)
     }
 
     //Setup file stream
-    $tempfile = tempnam(sys_get_temp_dir(), 'sitemap.xml.');
-    $file_stream = fopen($tempfile, "w") or die("Error: Could not create temporary file $tempfile" . "\n");
+    $tempfile = "public/sitemap.xml";
+    $file_stream = fopen($tempfile, "a+") or die("Error: Could not create temporary file $tempfile" . "\n");
 
     $map_row = "<url>\n";
-    $map_row .= "<loc>$url</loc>\n";
+    $map_row .= "<loc>$url</loc>\n";   
     if ($enable_frequency) {
         $map_row .= "<changefreq>$freq</changefreq>\n";
     }
@@ -335,6 +338,9 @@ function scan_url($url)
         }
     }
     $depth--;
+    if ($depth == 0) {
+        fwrite($file_stream, "</urlset>\n");
+    }
 }
 
 // fnmatch() filler for non-POSIX systems
