@@ -14,6 +14,7 @@ use App\Custom\RecommendedHelper;
 use App\Custom\VideoVoting;
 use App\Custom\MailHelper;
 use App\Custom\BlogPostHelper;
+use App\Custom\WebNotificationsHelper;
 
 use App\User;
 
@@ -23,7 +24,9 @@ class PagesController extends Controller
 {
 
 	public function test() {
-		return Notification::send(User::all(), new GenericNotification("New Book Summary", "Click to learn from Killing Marketing by Robert Rose", "https://www.sunnychopper.com/books"));
+		$web_push = new WebNotificationsHelper();
+        $web_push->send_generic_notification_to_all("New Book Summary", "Click to learn from Killing Marketing by Robert Rose", "https://www.sunnychopper.com/books");
+        return "Notifications should be sent...";
 	}
 
 	public function index() {
