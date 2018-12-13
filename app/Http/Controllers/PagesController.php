@@ -23,7 +23,7 @@ class PagesController extends Controller
 {
 
 	public function test() {
-		return Notification::send(User::all(), new GenericNotification("Test", "This is a test"));
+		return Notification::send(User::all(), new GenericNotification("New Book Summary", "Click to learn from Killing Marketing by Robert Rose", "https://www.sunnychopper.com/books"));
 	}
 
 	public function index() {
