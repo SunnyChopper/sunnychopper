@@ -5,7 +5,7 @@ self.addEventListener('push', function(event) {
 		self.registration.showNotification(data.title,{
 			body: data.body,
 			data: {
-				url: data.url
+				url: data.data.url
 			}
 		});
 		console.log('This push event has data: ', event.data.text());
