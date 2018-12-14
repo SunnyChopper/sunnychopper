@@ -15,6 +15,7 @@ use App\Custom\VideoVoting;
 use App\Custom\MailHelper;
 use App\Custom\BlogPostHelper;
 use App\Custom\WebNotificationsHelper;
+use App\Custom\BookSummaryHelper;
 
 use App\User;
 
@@ -131,7 +132,11 @@ class PagesController extends Controller
 		// Page data
 		$page_header = "Book Summaries";
 
-		return view('pages.books')->with('page_header', $page_header);
+		// Get books
+		$summary_helper = new BookSummaryHelper();
+		$books = $summary_helper->get_all();
+
+		return view('pages.books')->with('page_header', $page_header)->with('books', $books);
 	}
 
 	public function profile() {

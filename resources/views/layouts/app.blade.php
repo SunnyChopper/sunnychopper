@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php date_default_timezone_set('America/Chicago'); ?>
 <html lang="{{ app()->getLocale() }}">
 	<head>
 		<!-- Mobile Specific Meta -->

@@ -48,7 +48,14 @@
 						@if(Session::get('admin_login') == true)
 							<li><a href="/admin/dashboard">Dashboard</a></li>
 							<li class="menu-has-children">
-								<a href="/admin/recommend/view">Blog Posts</a>
+								<a href="/admin/summaries/view">Book Summaries</a>
+								<ul>
+									<li><a href="/admin/summaries/view">View Book Summaries</a></li>
+									<li><a href="/admin/summaries/new">New Book Summary</a></li>
+								</ul>
+							</li>
+							<li class="menu-has-children">
+								<a href="/admin/posts/view">Blog Posts</a>
 								<ul>
 									<li><a href="/admin/posts/view">View Blog Posts</a></li>
 									<li><a href="/admin/posts/new">New Blog Post</a></li>

@@ -18,6 +18,8 @@ self.addEventListener('notificationclick', function(event) {
 	event.notification.close();
 
 	// Get URL
+	console.log(event.notification);
+	console.log(event.notification.data);
 	let base_url = event.notification.data.url;
 	let tagged_url = base_url + "?utm_source=push_notifications&utm_medium=web_push";
 

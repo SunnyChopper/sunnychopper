@@ -48,6 +48,14 @@
 								</div>
 							</div>
 						</div>
+
+						<div class="col-lg-4 col-md-4 col-sm-6 col-6">
+							<div class="box square">
+								<div class="content">
+									<a href="/admin/summaries/new" class="blue-square-button">Book Summary</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

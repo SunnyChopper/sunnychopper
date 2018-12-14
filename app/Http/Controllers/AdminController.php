@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Custom\RecommendedHelper;
 use App\Custom\BlogPostHelper;
+use App\Custom\BookSummaryHelper;
 
 use App\User;
 
@@ -132,6 +133,44 @@ class AdminController extends Controller
         $post = $blog_helper->read_post();
 
         return view('admin.posts.edit')->with('page_header', $page_header)->with('post', $post);
+    }
+
+    public function view_book_summaries() {
+        // Page data
+        $page_header = "Book Summaries";
+
+        // Protect admin backend
+        $this->protect();
+
+        // Get blog posts
+        $summary_helper = new BookSummaryHelper();
+        $books = $summary_helper->get_all();
+
+        return view('admin.summaries.view')->with('page_header', $page_header)->with('books', $books);
+    }
+
+    public function new_book_summary() {
+        // Page data
+        $page_header = "New Book Summary";
+
+        // Protect admin backend
+        $this->protect();
+
+        return view('admin.summaries.new')->with('page_header', $page_header);
+    }
+
+    public function edit_book_summary($book_id) {
+        // Page data
+        $page_header = "Edit Blog Post";
+
+        // Protect admin backend
+        $this->protect();
+
+        // Get post
+        $summary_helper = new BookSummaryHelper($book_id);
+        $book = $summary_helper->read($book_id);
+
+        return view('admin.summaries.edit')->with('page_header', $page_header)->with('book', $book);
     }
 
     /* Private functions */

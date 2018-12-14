@@ -31,6 +31,9 @@ Route::get('/admin/recommend/view', 'AdminController@view_recommended');
 Route::get('/admin/posts/new', 'AdminController@new_blog_post');
 Route::get('/admin/posts/view', 'AdminController@view_blog_posts');
 Route::get('/admin/posts/edit/{post_id}', 'AdminController@edit_blog_post');
+Route::get('/admin/summaries/view', 'AdminController@view_book_summaries');
+Route::get('/admin/summaries/edit/{book_id}', 'AdminController@edit_book_summary');
+Route::get('/admin/summaries/new', 'AdminController@new_book_summary');
 
 // Blog post functions
 Route::post('/admin/posts/create', 'BlogController@create');
@@ -40,6 +43,11 @@ Route::post('/admin/posts/delete', 'BlogController@delete');
 // Recommended functions
 Route::post('/admin/recommend/create', 'RecommendedController@create');
 Route::post('/admin/recommend/delete', 'RecommendedController@delete');
+
+// Book summary functions
+Route::post('/admin/summaries/create', 'BookSummaryController@create');
+Route::post('/admin/summaries/update', 'BookSummaryController@update');
+Route::post('/admin/summaries/delete', 'BookSummaryController@delete');
 
 // Push notifications
 Route::post('/push/subscribe', 'PushController@store');
