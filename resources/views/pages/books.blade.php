@@ -18,7 +18,7 @@
 				@foreach($books as $book)
 					<div class="col-lg-3 col-md-3 col-sm-6 col-6 mt-8 mb-8">
 						<img src="{{ $book->book_image_url }}" class="regular-image">
-						<h4 class="text-center mt-16">{{ $book->book_title }}</h4>
+						<h4 class="text-center mt-16 mb-8">{{ $book->book_title }}</h4>
 						<a href="/books/{{ $book->id }}" class="btn btn-primary center-button">Learn More</a>
 					</div>
 				@endforeach
