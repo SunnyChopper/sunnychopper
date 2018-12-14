@@ -13,7 +13,7 @@ use Carbon\Carbon;
 
 class GenericNotification extends Notification
 {
-    public $title, $body;
+    public $title, $body, $action_url;
 
     /**
      * Create a new notification instance.
