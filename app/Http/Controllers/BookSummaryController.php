@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Custom\BookSummaryHelper;
+use App\Custom\WebNotificationsHelper;
 
 class BookSummaryController extends Controller
 {
@@ -25,7 +26,11 @@ class BookSummaryController extends Controller
     		"description" => $description,
     		"link" => $link
     	);
-    	$summary_helper->create($book_data);
+    	$book_id = $summary_helper->create($book_data);
+
+        // Create notification
+        $web_push_helper = new WebNotificationsHelper();
+        $web_push_helper->send_generic_notification_to_all($book_title, substr(strip_tags($description), 0, 128), "https://www.sunnychopper.com/books/" . $book_id);
 
     	// Redirect
     	return redirect(url('/admin/summaries/view'));

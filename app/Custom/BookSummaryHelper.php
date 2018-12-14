@@ -34,7 +34,10 @@ class BookSummaryHelper {
 	}
 
 	public function read($book_id) {
-		return BookSummary::find($book_id);
+		$book = BookSummary::find($book_id);
+		$book->views = $book->views + 1;
+		$book->save();
+		return $book;
 	}
 
 	public function update($data) {

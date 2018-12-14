@@ -139,6 +139,17 @@ class PagesController extends Controller
 		return view('pages.books')->with('page_header', $page_header)->with('books', $books);
 	}
 
+	public function view_book_summary($book_id) {
+		// Get book
+		$summary_helper = new BookSummaryHelper();
+		$book = $summary_helper->read($book_id);
+
+		// Page data
+		$page_header = $book->book_title;
+
+		return view('pages.view-book')->with('page_header', $page_header)->with('book', $book);
+	}
+
 	public function profile() {
 		// Page data
 		// TODO: Dynamically get name

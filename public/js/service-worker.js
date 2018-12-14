@@ -1,7 +1,6 @@
 self.addEventListener('push', function(event) {
 	if (event.data) {
 		var data = JSON.parse(event.data.text());
-		console.log(data);
 		self.registration.showNotification(data.title,{
 			body: data.body,
 			data: {
@@ -19,8 +18,6 @@ self.addEventListener('notificationclick', function(event) {
 	event.notification.close();
 
 	// Get URL
-	console.log(event.notification);
-	console.log(event.notification.data);
 	let base_url = event.notification.data.url;
 	let tagged_url = base_url + "?utm_source=push_notifications&utm_medium=web_push";
 

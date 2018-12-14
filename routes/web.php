@@ -21,6 +21,7 @@ Route::post('/contact/submit', 'PagesController@submit_contact');
 Route::get('/blog', 'PagesController@blog');
 Route::get('/books', 'PagesController@books');
 Route::get('/profile', 'PagesController@profile');
+Route::get('/books/{book_id}', 'PagesController@view_book_summary');
 
 // Admin backend site
 Route::get('/admin', 'AdminController@login');
