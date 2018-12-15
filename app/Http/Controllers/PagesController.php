@@ -146,8 +146,19 @@ class PagesController extends Controller
 
 		// Page data
 		$page_header = $book->book_title;
+		$og = array(
+            "title" => $book->book_title,
+            "description" => substr(strip_tags($book->description), 0, 124),
+            "image" => $book->book_image_url,
+            "url" => "https://www.sunnychopper.com/books/" . $book->id;
+        );
+        $twitter = array(
+            "title" => $book->book_title,
+            "description" => substr(strip_tags($book->description), 0, 124),
+            "image" => $book->book_image_url
+        );
 
-		return view('pages.view-book')->with('page_header', $page_header)->with('book', $book);
+		return view('pages.view-book')->with('page_header', $page_header)->with('book', $book)->with('og', $og)->with('twitter', $twitter);
 	}
 
 	public function profile() {

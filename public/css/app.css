@@ -275,12 +275,21 @@
 	margin-right: auto;
 }
 
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width : 575px) {
 	.benefit-box {
 		margin-top: 16px;
 		margin-bottom: 16px;
 		border: 2px solid #EEEEEE;
 		border-radius: 8px;
+	}
+
+	.footer-area {
+		padding-top: 32px;
+		background-color: #E0E0E0;
+	}
+
+	.section-gap {
+		padding-bottom: 32px;
 	}
 }
 
@@ -374,6 +383,9 @@
 	color: black;
 }
 
+.footer-social {
+	list-style-type: none;
+}
 
 /*-------------------------------*\
 	Special Rows
@@ -393,4 +405,10 @@
 
 .error-message {
 	color: red;
+}
+
+@media only screen and (max-width: 575px) {
+	.book-title {
+		margin-top: 24px;
+	}
 }
