@@ -150,7 +150,7 @@ class PagesController extends Controller
             "title" => $book->book_title,
             "description" => substr(strip_tags($book->description), 0, 124),
             "image" => $book->book_image_url,
-            "url" => "https://www.sunnychopper.com/books/" . $book->id;
+            "url" => "https://www.sunnychopper.com/books/" . $book->id
         );
         $twitter = array(
             "title" => $book->book_title,
