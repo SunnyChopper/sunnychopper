@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Custom\RecommendedHelper;
 use App\Custom\BlogPostHelper;
 use App\Custom\BookSummaryHelper;
+use App\Custom\PublicToolHelper;
 
 use App\User;
 
@@ -171,6 +172,44 @@ class AdminController extends Controller
         $book = $summary_helper->read($book_id);
 
         return view('admin.summaries.edit')->with('page_header', $page_header)->with('book', $book);
+    }
+
+    public function view_public_tools() {
+        // Page data
+        $page_header = "Public Tools";
+
+        // Protect admin backend
+        $this->protect();
+
+        // Get tools
+        $tool_helper = new PublicToolHelper();
+        $tools = $tool_helper->get_all();
+
+        return view('admin.tools.view')->with('page_header', $page_header)->with('tools', $tools);
+    }
+
+    public function new_public_tool() {
+        // Page data
+        $page_header = "New Public Tools";
+
+        // Protect admin backend
+        $this->protect();
+
+        return view('admin.tools.new')->with('page_header', $page_header);
+    }
+
+    public function edit_public_tool($tool_id) {
+        // Page data
+        $page_header = "Edit Public Tool";
+
+        // Protect admin backend
+        $this->protect();
+
+        // Get tools
+        $tool_helper = new PublicToolHelper($tool_id);
+        $tool = $tool_helper->read();
+
+        return view('admin.tools.edit')->with('page_header', $page_header)->with('tool', $tool);
     }
 
     /* Private functions */

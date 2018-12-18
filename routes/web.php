@@ -35,6 +35,14 @@ Route::get('/admin/posts/edit/{post_id}', 'AdminController@edit_blog_post');
 Route::get('/admin/summaries/view', 'AdminController@view_book_summaries');
 Route::get('/admin/summaries/edit/{book_id}', 'AdminController@edit_book_summary');
 Route::get('/admin/summaries/new', 'AdminController@new_book_summary');
+Route::get('/admin/tools/view', 'AdminController@view_public_tools');
+Route::get('/admin/tools/new', 'AdminController@new_public_tool');
+Route::get('/admin/tools/edit/{tool_id}', 'AdminController@edit_public_tool');
+
+// Public tool functions
+Route::post('/admin/tools/create', 'PublicToolsController@create');
+Route::post('/admin/tools/update', 'PublicToolsController@update');
+Route::post('/admin/tools/delete', 'PublicToolsController@delete');
 
 // Blog post functions
 Route::post('/admin/posts/create', 'BlogController@create');

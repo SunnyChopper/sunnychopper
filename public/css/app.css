@@ -157,6 +157,38 @@
 	border-bottom: 3px solid #E2E2E2;
 }
 
+.image-box {
+	border-radius: 8px;
+	background-color: white;
+}
+
+.image-box > .image-box-image > img {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-top: 2px solid #EAEAEA;
+	border-left: 2px solid #EAEAEA;
+	border-right: 2px solid #EAEAEA;
+}
+
+.image-box > .image-box-info {
+	padding: 24px;
+	background-color: white;
+	border-left: 2px solid #EAEAEA;
+	border-right: 2px solid #EAEAEA;
+}
+
+.image-box > .image-box-info > p {
+	font-size: 13px;
+	line-height: 21px;
+}
+
+.image-box > .image-box-footer {
+	padding: 24px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border: 2px solid #EAEAEA;
+}
+
 .activity-box {
 	padding: 16px;
 	margin-top: 8px;

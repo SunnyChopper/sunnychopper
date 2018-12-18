@@ -6,33 +6,31 @@
 	<div class="container mt-64 mb-64">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<h3>Software Tools for Entrepreneurs</h3>
+				<h3 class="text-center">Software Tools for Entrepreneurs</h3>
+				<p class="text-center mt-2">As entrepreneurs, we only have a certain amount of time and energy in a day. However, with the power of technology, we can start to create systems and processes that work even when we don't. It's the beautiful fusion of working hard and working smarter.</p>
 				<hr />
-				<div class="well">
-					<ul class="list-group">
-						<li class="list-group-item p-32">
-							<h4 class="mb-0">OptinDev</h4>
-							<hr />
-							<p class="mb-2">An opt-in page builder based on psychology to help you build a contact list for marketing purposes. Easily create opt-in pages that you can then forward to MailChimp, Aweber, or your favorite email service provider. Also have included support for ManyChat for Facebook Messenger marketing.</p>
-							<a href="https://optindev.com" class="btn btn-sm btn-primary">Access OptinDev</a>
-						</li>
-
-						<li class="list-group-item p-32">
-							<h4 class="mb-0">ManyChat</h4>
-							<hr />
-							<p class="mb-2">If you would like to start doing Facebook Messenger marketing, then you need to give ManyChat a go. It has a lot of features that allow you to build out full funnels that you can use to create LTV funnels. There's a free version and paid version as well.</p>
-							<a href="https://manychat.com" class="btn btn-sm btn-primary">Access ManyChat</a>
-						</li>
-
-						<li class="list-group-item p-32">
-							<h4 class="mb-0">Buffer</h4>
-							<hr />
-							<p class="mb-2">This is one tool that I use to stay consistent on my social media platforms. I just create content and schedule for it to be posted across various social media platforms and Buffer will post them at the times you specify. You can use it to create a consistent stream of evergreen content.</p>
-							<a href="https://buffer.com" class="btn btn-sm btn-primary">Access Buffer</a>
-						</li>
-					</ul>
-				</div>
 			</div>
+		</div>
+
+		<div class="row">
+			@foreach($tools as $tool)
+				<div class="col-lg-4 col-md-6 col-sm-12 col-12">
+					<div class="image-box">
+						<div class="image-box-image">
+							<img src="{{ $tool->image_url }}" class="regular-image">
+						</div>
+						<div class="image-box-info">
+							<h3 class="text-center">{{ $tool->title }}</h3>
+							<p class="text-center mb-0"><small><b style="margin-right: 2px;">Category: </b>{{ $tool->category }}</small></p>
+							<hr />
+							<p class="text-center mb-0">{{ $tool->description }}</p>
+						</div>
+						<div class="image-box-footer">
+							<a href="{{ $tool->link_url }}" class="genric-btn primary rounded medium center-button">Access Tool</a>
+						</div>
+					</div>
+				</div>
+			@endforeach
 		</div>
 	</div>
 @endsection

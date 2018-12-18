@@ -25,7 +25,7 @@
                     <i class="fa fa-laptop"></i>
                     <h4>Software Tools</h4>
                     <p>It's not just about working hard, you must work smart as well. I can help you do that with my software tools to help you automate.</p>
-                    <a href="{{ route('push_test') }}" class="btn primary-btn btn-sm">View Tools</a>
+                    <a href="/tools" class="btn primary-btn btn-sm">View Tools</a>
                 </div>
             </div>
 

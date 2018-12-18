@@ -16,6 +16,7 @@ use App\Custom\MailHelper;
 use App\Custom\BlogPostHelper;
 use App\Custom\WebNotificationsHelper;
 use App\Custom\BookSummaryHelper;
+use App\Custom\PublicToolHelper;
 
 use App\User;
 
@@ -38,7 +39,11 @@ class PagesController extends Controller
 		// Page data
 		$page_header = "Tools";
 
-		return view('pages.tools')->with('page_header', $page_header);
+		// Get tools
+		$tool_helper = new PublicToolHelper();
+		$tools = $tool_helper->get_all();
+
+		return view('pages.tools')->with('page_header', $page_header)->with('tools', $tools);
 	}
 
 	public function community() {
@@ -114,7 +119,7 @@ class PagesController extends Controller
 		$mail_helper->send_contact_email();
 
 		// Send back
-		return redirect()->back()->with('success', 'Successfully sent contact submission');
+		return redirect()->back()->with('success', 'Successfully submitted.');
 	}
 
 	public function blog() {
