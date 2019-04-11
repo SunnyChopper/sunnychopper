@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/dev/ipark', function() {
+	return redirect(url('http://18.224.110.206'));
+});
+
 // Public site
 Route::get('/', 'PagesController@index');
 Route::get('/tools', 'PagesController@tools');
