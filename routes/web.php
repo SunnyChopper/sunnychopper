@@ -74,6 +74,13 @@ Route::get('/logout', 'MembersController@logout');
 // Voting
 Route::post('/vote/create', 'VotingController@create');
 
+// Planner functions
+Route::get('/members/planner', 'PlannerController@index');
+Route::get('/members/planner/new', 'PlannerController@new');
+Route::get('/members/planner/stats', 'PlannerController@stats');
+Route::post('/members/planner/create', 'PlannerController@create');
+Route::post('/members/planner/update', 'PlannerController@update');
+
 // Debugging
 Route::get('/push-test', 'PagesController@test')->name('push_test');
 Route::get('/php-info', function() {

@@ -88,7 +88,12 @@
 						<li><a href="/">Home</a></li>
 						<li><a href="/blog">Free Knowledge</a></li>
 						<li><a href="/books">Book Summaries</a></li>
-						<li><a href="/tools">Tools</a></li>
+						<li class="menu-has-children">
+							<a href="/tools">Tools</a>
+							<ul>
+								<li><a href="{{ url('/members/planner') }}">10X Planner</a></li>
+							</ul>
+						</li>
 						<li><a href="/community">Community</a></li>
 						<li><a href="/recommended">Recommended</a></li>
 						{{-- <li class="menu-has-children"><a href="/blog">Blog</a></li>     --}}

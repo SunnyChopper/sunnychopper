@@ -99,12 +99,8 @@
 					<hr />
 					<ul class="list-group">
 						<li class="list-group-item">
-							<h5>SunnyChopper.com</h5>
-							<p class="mt-2 mb-0">This website right here. Still developing it. Adding more features to it nearly everday to deliver the best content experience possible.</p>
-						</li>
-						<li class="list-group-item">
-							<h5>Influencer Monetization Program</h5>
-							<p class="mt-2 mb-0">Brands and influencers out there have a lot of attention but may not have the resources or the know-how to monetize that audience. That's where I can come in and help them by building apps, websites, and full digital marketing strategies.</p>
+							<h5>10X Planner</h5>
+							<p class="mt-2 mb-0">Creating a 10X Planner tool that is based off of Grant Cardone's model on planning your day. Going to attempt to automate a lot of it and then add the RICE prioritization on top of it.</p>
 						</li>
 					</ul>
 				</div>
