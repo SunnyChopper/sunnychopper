@@ -16,12 +16,12 @@
 						<div class="form-group row">
 							<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 								<label>Write Your Big Picture Goals (morning):</label>
-								<textarea class="form-control" form="update_planner_form" name="morning_goals" rows="5">@foreach(json_decode($planner->morning_goals) as $goal){{ $goal . "\n" }}@endforeach</textarea>
+								<textarea class="form-control" form="update_planner_form" name="morning_goals" rows="5">@if(isset($planner->morning_goals))@foreach(json_decode($planner->morning_goals) as $goal){{ $goal . "\n" }}@endforeach@endif</textarea>
 							</div>
 
 							<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 								<label>Write Your Big Picture Goals (night):</label>
-								<textarea class="form-control" form="update_planner_form" name="night_goals" rows="5">@foreach(json_decode($planner->night_goals) as $goal){{ $goal . "\n" }}@endforeach</textarea>
+								<textarea class="form-control" form="update_planner_form" name="night_goals" rows="5">@if(isset($planner->night_goals)) @foreach(json_decode($planner->night_goals) as $goal){{ $goal . "\n" }}@endforeach@endif</textarea>
 							</div>
 						</div>
 
@@ -33,7 +33,7 @@
 
 							<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 								<label>Successes:</label>
-								<textarea class="form-control" form="update_planner_form" name="successes" rows="6">@foreach(json_decode($planner->successes) as $success){{ $success . "\n" }}@endforeach</textarea>
+								<textarea class="form-control" form="update_planner_form" name="successes" rows="6">@if(isset($planner->successes))@foreach(json_decode($planner->successes) as $success){{ $success . "\n" }}@endforeach@endif</textarea>
 							</div>
 						</div>
 
