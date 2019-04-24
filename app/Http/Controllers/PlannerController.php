@@ -37,9 +37,9 @@ class PlannerController extends Controller
     	$page_header = $page_title;
 
         if (isset($timezone)) {
-            $planner = Planner::whereDate('planner_date', Carbon::today($timezone))->first();
+            $planner = Planner::where('user_id', Auth::id())->whereDate('planner_date', Carbon::today($timezone))->first();
         } else {
-            $planner = Planner::whereDate('planner_date', Carbon::today())->first();
+            $planner = Planner::where('user_id', Auth::id())->whereDate('planner_date', Carbon::today())->first();
         }
     	
 
