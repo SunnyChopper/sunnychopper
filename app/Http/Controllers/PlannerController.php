@@ -48,6 +48,18 @@ class PlannerController extends Controller
     	return view('members.planner.index')->with('page_title', $page_title)->with('page_header', $page_header)->with('planner', $planner)->with('prev_planners', $prev_planners);
     }
 
+    public function view($planner_id) {
+        if ($this->authCheck() == false) {
+            return redirect(url('/login'));
+        }
+
+        $planner = Planner::find($planner_id);
+        $page_title = "View Past Planner";
+        $page_header = $page_title;
+
+        return view('members.planner.view')->with('page_title', $page_title)->with('page_header', $page_header)->with('planner', $planner);
+    }
+
     public function new() {
     	if ($this->authCheck() == false) {
     		return redirect(url('/login'));
