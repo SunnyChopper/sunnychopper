@@ -245,31 +245,6 @@
 						<p class="text-center">There was no planner found for today. Click below to create a planner.</p>
 						<a href="/members/planner/new" class="genric-btn primary rounded centered">Create Planner</a>
 					</div>
-
-					@if(count($prev_planners) > 0)
-					<div class="row mt-32">
-						<div class="col-12">
-							<table class="table table-striped">
-								<thead>
-									<tr>
-										<th>Date</th>
-										<th>Completed/Total</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									@foreach($prev_planners as $p)
-									<tr>
-										<td style="vertical-align: middle;">{{ $p->planner_date }}</td>
-										<td style="vertical-align: middle;">{{ \App\Custom\PlannerHelper::getCompletedTasks($p->id) }}</td>
-										<td style="vertical-align: middle;"><a href="/members/planner/view/{{ $p->id }}" class="btn btn-primary btn-sm">View</a>
-									</tr>
-									@endforeach
-								</tbody>
-							</table>
-						</div>
-					</div>
-					@endif
 				</div>
 			@endif
 		</div>

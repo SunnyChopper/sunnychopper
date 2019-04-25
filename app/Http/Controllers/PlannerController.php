@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Custom\PlannerHelper;
 use Carbon\Carbon;
 use App\Planner;
 use Auth;
@@ -42,8 +43,9 @@ class PlannerController extends Controller
             $planner = Planner::where('user_id', Auth::id())->whereDate('planner_date', Carbon::today())->first();
         }
     	
+        $prev_planners = Planner::where('user_id', Auth::id())->get();
 
-    	return view('members.planner.index')->with('page_title', $page_title)->with('page_header', $page_header)->with('planner', $planner);
+    	return view('members.planner.index')->with('page_title', $page_title)->with('page_header', $page_header)->with('planner', $planner)->with('prev_planners', $prev_planners);
     }
 
     public function new() {
