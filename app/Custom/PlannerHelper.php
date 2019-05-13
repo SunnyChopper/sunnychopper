@@ -6,7 +6,7 @@ use App\Planner;
 class PlannerHelper {
 	
 	public static function getCompletedTasks($planner_id) {
-		$results = getNumberOfCompletedTasks($planner_id);
+		$results = PlannerHelper::getNumberOfCompletedTasks($planner_id);
 		return $results[0] . "/" . $results[1];
 	}
 
