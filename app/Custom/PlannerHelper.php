@@ -150,7 +150,7 @@ class PlannerHelper {
  		}
  	}
 
- 	private function getBlockCompletion($planner_id) {
+ 	private static function getBlockCompletion($planner_id) {
  		$p = Planner::find($planner_id);
 
 		$block_1_completed = 0;
@@ -211,7 +211,7 @@ class PlannerHelper {
 		return array($block_1_completed, $block_2_completed, $block_3_completed, $block_4_completed, $block_5_completed, $block_6_completed);
  	}
 
-	private function getNumberOfCompletedTasks($planner_id) {
+	private static function getNumberOfCompletedTasks($planner_id) {
 		$p = Planner::find($planner_id);
 
 		$num_tasks = 0;
