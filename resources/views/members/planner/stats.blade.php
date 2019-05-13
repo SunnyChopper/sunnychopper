@@ -11,30 +11,32 @@
 					<hr />
 					<div class="row">
 						<div class="col-lg-4 col-md-4 col-sm-12 col-12">
-							<h3 class="text-center mb-1">{{ App\Custom\PlannerHelper::getWorstDay(Auth::id()) }}</h3>
-							<p class="text-center mb-0">Worst Day Ratio</p>
+
+							<h3 class="text-center mb-1">{{ sprintf("%.2f", App\Custom\PlannerHelper::getWorstDay(Auth::id())[0] * 100) }}%</h3>
+							<p class="text-center mb-0">Worst Day Efficiency</p>
 						</div>
 
 						<div class="col-lg-4 col-md-4 col-sm-12 col-12">
-							<h3 class="text-center mb-1">{{ App\Custom\PlannerHelper::getBestDay(Auth::id()) }}</h3>
-							<p class="text-center mb-0">Best Day Ratio</p>
+							<h3 class="text-center mb-1">{{ sprintf("%.2f", App\Custom\PlannerHelper::getBestDay(Auth::id())[0] * 100) }}%</h3>
+							<p class="text-center mb-0">Best Day Efficiency</p>
 						</div>
 
 						<div class="col-lg-4 col-md-4 col-sm-12 col-12">
-							<h3 class="text-center mb-1">{{ App\Custom\PlannerHelper::getAverage(Auth::id()) }}</h3>
+							<h3 class="text-center mb-1">{{ sprintf("%.2f", App\Custom\PlannerHelper::getAverage(Auth::id())) }}%</h3>
 							<p class="text-center mb-0">Average Ratio</p>
 						</div>
 					</div>
 					<hr />
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-12 col-12">
-							<h3 class="text-center mb-1">3.13</h3>
-							<p class="text-center mb-0">C-U Tasks Ratio</p>
+							<h3 class="text-center mb-1">Block {{ App\Custom\PlannerHelper::getBestBlock(Auth::id()) }}</h3>
+							<p class="text-center mb-0">Best Block</p>
 						</div>
 
 						<div class="col-lg-6 col-md-6 col-sm-12 col-12">
-							<h3 class="text-center mb-1">75.8%</h3>
-							<p class="text-center mb-0">Efficiency</p>
+							<?php $weekMap = [0 => 'Sunday', 1 => 'Monday', 2 => 'Tuesday', 3 => 'Wednesday', 4 => 'Thursday', 5 => 'Friday', 6 => 'Saturday']; ?>
+							<h3 class="text-center mb-1">{{ $weekMap[App\Custom\PlannerHelper::getBestDayAverage(Auth::id())[0]] }}</h3>
+							<p class="text-center mb-0">Best Day</p>
 						</div>
 					</div>
 				</div>

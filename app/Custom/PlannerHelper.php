@@ -11,11 +11,11 @@ class PlannerHelper {
 	}
 
 	public static function getWorstDay($user_id) {
-		$planners = Planner::where('user_id', $user_id)->where('is_active', 1)->get();
+		$planners = Planner::where('user_id', $user_id)->get();
 		$worst = 1.00;
 		$worst_date = "";
 		foreach($planners as $p) {
-			$results = $this->getNumberOfCompletedTasks($p->id);
+			$results = PlannerHelper::getNumberOfCompletedTasks($p->id);
 			if (((float)$results[0] / (float)$results[1]) < $worst) {
 				$worst = $results[0] / $results[1];
 				$worst_date = $p->created_at->format('M jS, Y');
@@ -26,11 +26,11 @@ class PlannerHelper {
 	}
 
 	public static function getBestDay($user_id) {
-		$planners = Planner::where('user_id', $user_id)->where('is_active', 1)->get();
+		$planners = Planner::where('user_id', $user_id)->get();
 		$best = 0.00;
 		$best_date = "";
 		foreach($planners as $p) {
-			$results = $this->getNumberOfCompletedTasks($p->id);
+			$results = PlannerHelper::getNumberOfCompletedTasks($p->id);
 			if (((float)$results[0] / (float)$results[1]) > $best) {
 				$best = $results[0] / $results[1];
 				$best_date = $p->created_at->format('M jS, Y');
@@ -41,12 +41,12 @@ class PlannerHelper {
 	}
 
 	public static function getAverage($user_id) {
-		$planners = Planner::where('user_id', $user_id)->where('is_active', 1)->get();
+		$planners = Planner::where('user_id', $user_id)->get();
 		$total_completed = 0;
 		$total_tasks = 0;
 
 		foreach($planners as $p) {
-			$results = $this->getNumberOfCompletedTasks($p->id);
+			$results = PlannerHelper::getNumberOfCompletedTasks($p->id);
 			$total_completed += $results[0];
 			$total_tasks += $results[1];
 		}
@@ -56,12 +56,44 @@ class PlannerHelper {
 		return $percentage;
  	}
 
- 	public static function getDayAverages($user_id) {
- 		$planners = Planner::where('user_id', $user_id)->where('is_active', 1)->get();
+ 	public static function getBestDayAverage($user_id) {
+ 		$planners = Planner::where('user_id', $user_id)->get();
  		$day_averages = array();
 
  		foreach($planners as $p) {
- 			$results = $this->getNumberOfCompletedTasks($p->id);
+ 			$results = PlannerHelper::getNumberOfCompletedTasks($p->id);
+ 			$day = $p->created_at->dayOfWeek;
+
+ 			if (array_key_exists($day, $day_averages)) {
+ 				$ratio = (float)$results[0] / (float)$results[1];
+ 				$existing_average = $day_averages[$day];
+ 				$total = $existing_average + $ratio;
+ 				$new_average = (float)$total / 2.00;
+ 				$day_averages[$day] = $new_average;
+ 			} else {
+ 				$ratio = (float)$results[0] / (float)$results[1];
+ 				$day_averages[$day] = $ratio;
+ 			}
+ 		}
+
+ 		$best_day_efficiency = 0.00;
+ 		$best_day = "";
+ 		foreach($day_averages as $day => $average) {
+ 			if ($average > $best_day_efficiency) {
+ 				$best_day = $day;
+ 				$best_day_efficiency = $average;
+ 			}
+ 		}
+
+ 		return array($best_day, $best_day_efficiency);
+ 	}
+
+ 	public static function getDayAverages($user_id) {
+ 		$planners = Planner::where('user_id', $user_id)->get();
+ 		$day_averages = array();
+
+ 		foreach($planners as $p) {
+ 			$results = PlannerHelper::getNumberOfCompletedTasks($p->id);
  			$day = $p->created_at->dayOfWeek;
 
  			if (array_key_exists($day, $day_averages)) {
@@ -80,11 +112,11 @@ class PlannerHelper {
  	}
 
  	public static function getBlockAverages($user_id) {
- 		$planners = Planner::where('user_id', $user_id)->where('is_active', 1)->get();
+ 		$planners = Planner::where('user_id', $user_id)->get();
  		$block_totals = array(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
  		foreach($planners as $p) {
- 			$results = $this->getBlockCompletion($p->id);
+ 			$results = PlannerHelper::getBlockCompletion($p->id);
  			for ($i = 0; $i < count($results); $i++) {
  				if ($block_totals[$i] == 0.0) {
  					$block_totals[$i] = $results[$i];
@@ -101,11 +133,11 @@ class PlannerHelper {
  	}
 
  	public static function getBestBlock($user_id) {
- 		$planners = Planner::where('user_id', $user_id)->where('is_active', 1)->get();
+ 		$planners = Planner::where('user_id', $user_id)->get();
  		$block_totals = array(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
  		foreach($planners as $p) {
- 			$results = $this->getBlockCompletion($p->id);
+ 			$results = PlannerHelper::getBlockCompletion($p->id);
  			for ($i = 0; $i < count($results); $i++) {
  				if ($block_totals[$i] == 0.0) {
  					$block_totals[$i] = $results[$i];
@@ -129,10 +161,10 @@ class PlannerHelper {
  	}
 
  	public static function getTasksCompletedForDate($user_id, $date) {
- 		$p = Planner::where('user_id', $user_id)->whereDate('planner_date', $date)->where('is_active', 1)->first();
+ 		$p = Planner::where('user_id', $user_id)->whereDate('planner_date', $date)->first();
 
  		if (count($p) == 1) {
- 			$results = $this->getNumberOfCompletedTasks($p->id);
+ 			$results = PlannerHelper::getNumberOfCompletedTasks($p->id);
  			return $results[0];
  		} else {
  			return 0;
@@ -140,10 +172,10 @@ class PlannerHelper {
  	}
 
  	public static function getCompletionForDate($user_id, $date) {
-		$p = Planner::where('user_id', $user_id)->whereDate('planner_date', $date)->where('is_active', 1)->first();
+		$p = Planner::where('user_id', $user_id)->whereDate('planner_date', $date)->first();
 
  		if (count($p) == 1) {
- 			$results = $this->getNumberOfCompletedTasks($p->id);
+ 			$results = PlannerHelper::getNumberOfCompletedTasks($p->id);
  			return (float)$results[0] / (float)$results[1];
  		} else {
  			return 0;
@@ -161,7 +193,6 @@ class PlannerHelper {
 		$block_6_completed = 0;
 
 		$block_1_tasks = json_decode($p->block_1_tasks);
-		$num_tasks += count($block_1_tasks);
 		foreach($block_1_tasks as $task) {
 			if($task[1] == 1) {
 				$block_1_completed += 1;
@@ -169,7 +200,6 @@ class PlannerHelper {
 		}
 
 		$block_2_tasks = json_decode($p->block_2_tasks);
-		$num_tasks += count($block_2_tasks);
 		foreach($block_2_tasks as $task) {
 			if($task[1] == 1) {
 				$block_2_completed += 1;
@@ -177,7 +207,6 @@ class PlannerHelper {
 		}
 
 		$block_3_tasks = json_decode($p->block_3_tasks);
-		$num_tasks += count($block_3_tasks);
 		foreach($block_3_tasks as $task) {
 			if($task[1] == 1) {
 				$block_3_completed += 1;
@@ -185,7 +214,6 @@ class PlannerHelper {
 		}
 
 		$block_4_tasks = json_decode($p->block_4_tasks);
-		$num_tasks += count($block_4_tasks);
 		foreach($block_4_tasks as $task) {
 			if($task[1] == 1) {
 				$block_4_completed += 1;
@@ -193,7 +221,6 @@ class PlannerHelper {
 		}
 
 		$block_5_tasks = json_decode($p->block_5_tasks);
-		$num_tasks += count($block_5_tasks);
 		foreach($block_5_tasks as $task) {
 			if($task[1] == 1) {
 				$block_5_completed += 1;
@@ -201,7 +228,6 @@ class PlannerHelper {
 		}
 
 		$block_6_tasks = json_decode($p->block_6_tasks);
-		$num_tasks += count($block_6_tasks);
 		foreach($block_6_tasks as $task) {
 			if($task[1] == 1) {
 				$block_6_completed += 1;
