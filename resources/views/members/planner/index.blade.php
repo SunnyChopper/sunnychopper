@@ -238,10 +238,13 @@
 						</div>
 					</form>
 
-					<div class="mt-32" style="overflow: auto;">
-						@if(count($prev_planners) > 0)
-						<div class="row mt-32">
-							<div class="col-12">
+				
+					@if(count($prev_planners) > 0)
+					<div class="row mt-32">
+						<div class="col-12">
+							<h3>Previous Planners</h3>
+							<hr />
+							<div style="overflow: auto;">
 								<table class="table table-striped">
 									<thead>
 										<tr>
@@ -255,15 +258,16 @@
 										<tr>
 											<td style="vertical-align: middle;">{{ $p->planner_date }}</td>
 											<td style="vertical-align: middle;">{{ \App\Custom\PlannerHelper::getCompletedTasks($p->id) }}</td>
-											<td style="vertical-align: middle;"><a href="/members/planner/view/{{ $p->id }}" class="btn btn-primary btn-sm">View</a>
+											<td style="vertical-align: middle;"><a href="/members/planner/view/{{ $p->id }}" class="btn btn-primary btn-sm">View</a></td>
 										</tr>
 										@endforeach
 									</tbody>
 								</table>
 							</div>
 						</div>
-						@endif
 					</div>
+					@endif
+					
 				</div>
 			@else
 				<div class="col-lg-7 col-md-8 col-sm-12 col-12">
@@ -289,7 +293,7 @@
 									<tr>
 										<td style="vertical-align: middle;">{{ $p->planner_date }}</td>
 										<td style="vertical-align: middle;">{{ \App\Custom\PlannerHelper::getCompletedTasks($p->id) }}</td>
-										<td style="vertical-align: middle;"><a href="/members/planner/view/{{ $p->id }}" class="btn btn-primary btn-sm">View</a>
+										<td style="vertical-align: middle;"><a href="/members/planner/view/{{ $p->id }}" class="btn btn-primary btn-sm">View</a></td>
 									</tr>
 									@endforeach
 								</tbody>
