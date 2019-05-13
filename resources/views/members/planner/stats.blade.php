@@ -11,18 +11,18 @@
 					<hr />
 					<div class="row">
 						<div class="col-lg-4 col-md-4 col-sm-12 col-12">
-							<h3 class="text-center mb-1">124</h3>
-							<p class="text-center mb-0">Total Tasks</p>
+							<h3 class="text-center mb-1">{{ App\Custom\PlannerHelper::getWorstDay(Auth::id()) }}</h3>
+							<p class="text-center mb-0">Worst Day Ratio</p>
 						</div>
 
 						<div class="col-lg-4 col-md-4 col-sm-12 col-12">
-							<h3 class="text-center mb-1">94</h3>
-							<p class="text-center mb-0">Completed Tasks</p>
+							<h3 class="text-center mb-1">{{ App\Custom\PlannerHelper::getBestDay(Auth::id()) }}</h3>
+							<p class="text-center mb-0">Best Day Ratio</p>
 						</div>
 
 						<div class="col-lg-4 col-md-4 col-sm-12 col-12">
-							<h3 class="text-center mb-1">30</h3>
-							<p class="text-center mb-0">Uncompleted Tasks</p>
+							<h3 class="text-center mb-1">{{ App\Custom\PlannerHelper::getAverage(Auth::id()) }}</h3>
+							<p class="text-center mb-0">Average Ratio</p>
 						</div>
 					</div>
 					<hr />
