@@ -237,6 +237,33 @@
 							</div>
 						</div>
 					</form>
+
+					<div class="mt-32" style="overflow: auto;">
+						@if(count($prev_planners) > 0)
+						<div class="row mt-32">
+							<div class="col-12">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Date</th>
+											<th>Completed/Total</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										@foreach($prev_planners as $p)
+										<tr>
+											<td style="vertical-align: middle;">{{ $p->planner_date }}</td>
+											<td style="vertical-align: middle;">{{ \App\Custom\PlannerHelper::getCompletedTasks($p->id) }}</td>
+											<td style="vertical-align: middle;"><a href="/members/planner/view/{{ $p->id }}" class="btn btn-primary btn-sm">View</a>
+										</tr>
+										@endforeach
+									</tbody>
+								</table>
+							</div>
+						</div>
+						@endif
+					</div>
 				</div>
 			@else
 				<div class="col-lg-7 col-md-8 col-sm-12 col-12">
