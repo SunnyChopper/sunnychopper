@@ -274,7 +274,10 @@
 					<div class="grey-box">
 						<h4 class="text-center mb-2">No Planner for Today</h4>
 						<p class="text-center">There was no planner found for today. Click below to create a planner.</p>
-						<a href="/members/planner/new" class="genric-btn primary rounded centered">Create Planner</a>
+						<div class="centered">
+							<a href="/members/planner/new" class="genric-btn primary rounded centered" style="display: inline-block;">Create Planner</a>
+							<a href="/members/planner/stats" class="genric-btn danger" style="display: inline-block;">View Stats</a>
+						</div>
 					</div>
 
 					@if(count($prev_planners) > 0)

@@ -230,7 +230,7 @@
 								<div class="centered">
 									<input type="submit" class="genric-btn primary" value="Update Planner">
 									<a href="/members/planner/new" class="genric-btn info">Create New Planner</a>
-									{{-- <a href="/members/planner/stats" class="genric-btn danger">View Stats</a> --}}
+									<a href="/members/planner/stats" class="genric-btn danger">View Stats</a>
 								</div>
 							</div>
 						</div>
