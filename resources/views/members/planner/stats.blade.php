@@ -45,7 +45,49 @@
 			<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 				<h4 class="text-center">Advanced Stats</h4>
 				<hr />
-				<p class="text-center">Feature coming soon...</p>
+				<div class="row">
+					<div class="col-lg-8 col-md-8 col-sm-8 col-10">
+						<h4><b>Average RICE Score:</b></h4>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-4 col-2">
+						<h4 style="float: right;">{{ sprintf("%.2f", App\Custom\PlannerHelper::getAverageRICEScore(Auth::id())) }}</h4>
+					</div>
+				</div>
+
+				<div class="row mt-16">
+					<div class="col-lg-8 col-md-8 col-sm-12 col-12">
+						<h5>Average Completed RICE Score:</h5>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+						<h5 style="float: right;">{{ sprintf("%.2f", App\Custom\PlannerHelper::getCompletedRICEScore(Auth::id())) }}</h5>
+					</div>
+				</div>
+
+				<div class="row mt-16">
+					<div class="col-lg-8 col-md-8 col-sm-12 col-12">
+						<h5>Average Uncompleted RICE Score:</h5>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+						<h5 style="float: right;">{{ sprintf("%.2f", App\Custom\PlannerHelper::getUncompletedRICEScore(Auth::id())) }}</h5>
+					</div>
+				</div>
+
+				<div class="row mt-16">
+					<div class="col-lg-8 col-md-8 col-sm-12 col-12">
+						<h4><b>RICE Efficiency Score:</b></h4>
+					</div>
+
+					<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+						@if(App\Custom\PlannerHelper::getUncompletedRICEScore(Auth::id()) != 0)
+						<h4 style="float: right;">{{ sprintf("%.2f", ((float) App\Custom\PlannerHelper::getCompletedRICEScore(Auth::id()) /(float) App\Custom\PlannerHelper::getUncompletedRICEScore(Auth::id()))) }}</h4>
+						@else
+						<h4 style="float: right;">N/A</h4>
+						@endif
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

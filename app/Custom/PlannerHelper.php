@@ -171,6 +171,253 @@ class PlannerHelper {
  		}
  	}
 
+ 	public static function getAverageRICEScore($user_id) {
+ 		$planners = Planner::where('user_id', $user_id)->get();
+ 		$rice_total = 0;
+ 		$num_rice = 0;
+
+ 		foreach($planners as $p) {
+ 			$block_1 = json_decode($p->block_1_tasks);
+ 			foreach($block_1 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[2] != "N\/A" && $b[2] != "N/A") {
+ 						$rice_total += intval($b[2]);
+ 						$num_rice += 1;
+ 					}	
+ 				}
+ 			}
+
+ 			$block_2 = json_decode($p->block_2_tasks);
+ 			foreach($block_2 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[2] != "N\/A" && $b[2] != "N/A") {
+ 						$rice_total += intval($b[2]);
+ 						$num_rice += 1;
+ 					}
+ 				}
+ 			}
+
+ 			$block_3 = json_decode($p->block_3_tasks);
+ 			foreach($block_3 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[2] != "N\/A" && $b[2] != "N/A") {
+ 						$rice_total += intval($b[2]);
+ 						$num_rice += 1;
+ 					}
+ 				}
+ 			}
+
+ 			$block_4 = json_decode($p->block_4_tasks);
+ 			foreach($block_4 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[2] != "N\/A" && $b[2] != "N/A") {
+ 						$rice_total += intval($b[2]);
+ 						$num_rice += 1;
+ 					}
+ 				}
+ 			}
+
+ 			$block_5 = json_decode($p->block_5_tasks);
+ 			foreach($block_5 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[2] != "N\/A" && $b[2] != "N/A") {
+ 						$rice_total += intval($b[2]);
+ 						$num_rice += 1;
+ 					}
+ 				}
+ 			}
+
+ 			$block_6 = json_decode($p->block_6_tasks);
+ 			foreach($block_6 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[2] != "N\/A" && $b[2] != "N/A") {
+ 						$rice_total += intval($b[2]);
+ 						$num_rice += 1;
+ 					}
+ 				}
+ 			}
+ 		}
+
+ 		if ($num_rice != 0) {
+ 			return (float) $rice_total / (float) $num_rice;
+ 		} else {
+ 			return 0.00;
+ 		}
+ 		
+ 	}
+
+ 	public static function getCompletedRICEScore($user_id) {
+ 		$planners = Planner::where('user_id', $user_id)->get();
+ 		$rice_total = 0;
+ 		$num_rice = 0;
+
+ 		foreach($planners as $p) {
+ 			$block_1 = json_decode($p->block_1_tasks);
+ 			foreach($block_1 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 1) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+
+ 			$block_2 = json_decode($p->block_2_tasks);
+ 			foreach($block_2 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 1) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+
+ 			$block_3 = json_decode($p->block_3_tasks);
+ 			foreach($block_3 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 1) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+
+ 			$block_4 = json_decode($p->block_4_tasks);
+ 			foreach($block_4 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 1) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+
+ 			$block_5 = json_decode($p->block_5_tasks);
+ 			foreach($block_5 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 1) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+
+ 			$block_6 = json_decode($p->block_6_tasks);
+ 			foreach($block_6 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 1) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+ 		}
+
+ 		if ($num_rice != 0) {
+ 			return (float) $rice_total / (float) $num_rice;
+ 		} else {
+ 			return 0.00;
+ 		}
+ 	}
+
+ 	public static function getUncompletedRICEScore($user_id) {
+ 		$planners = Planner::where('user_id', $user_id)->get();
+ 		$rice_total = 0;
+ 		$num_rice = 0;
+
+ 		foreach($planners as $p) {
+ 			$block_1 = json_decode($p->block_1_tasks);
+ 			foreach($block_1 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 0) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+
+ 			$block_2 = json_decode($p->block_2_tasks);
+ 			foreach($block_2 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 0) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+
+ 			$block_3 = json_decode($p->block_3_tasks);
+ 			foreach($block_3 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 0) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+
+ 			$block_4 = json_decode($p->block_4_tasks);
+ 			foreach($block_4 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 0) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+
+ 			$block_5 = json_decode($p->block_5_tasks);
+ 			foreach($block_5 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 0) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+
+ 			$block_6 = json_decode($p->block_6_tasks);
+ 			foreach($block_6 as $b) {
+ 				if (count($b) == 3) {
+ 					if ($b[1] == 0) {
+ 						if ($b[2] != "N\/A" && $b[2] != "N/A") {
+	 						$rice_total += intval($b[2]);
+	 						$num_rice += 1;
+	 					}
+ 					}
+ 				}
+ 			}
+ 		}
+
+ 		if ($num_rice != 0) {
+ 			return (float) $rice_total / (float) $num_rice;
+ 		} else {
+ 			return 0.00;
+ 		}
+ 	}
+
  	public static function getCompletionForDate($user_id, $date) {
 		$p = Planner::where('user_id', $user_id)->whereDate('planner_date', $date)->first();
 

@@ -73,96 +73,39 @@ class PlannerController extends Controller
 
     public function create(Request $data) {
         if (Planner::where('user_id', Auth::id())->where('planner_date', $data->planner_date)->count() > 0) {
-            return redirect()->back()->with(['error' => 'Planner already exists for this day.']);
+            return response()->json(['error' => 'Planner already exists for this day.'], 200);
         }
 
         $planner = new Planner;
         $planner->start_time = $data->start_time;
         $planner->planner_date = $data->planner_date;
         $planner->qotd = $data->qotd;
-        $planner->user_id = Auth::id();
+        $planner->user_id = $data->user_id;
 
         // Targets
         $targets = explode("\n", $data->targets);
         $json_targets = json_encode($targets);
 
-        // Block 1
-        $block_1_strings = explode("\n", $data->block_1_tasks);
-        $block_1_array = array();
-        foreach ($block_1_strings as $string) {
-            $temp_array = array();
-            $temp_array[0] = $string;
-            $temp_array[1] = 0;
-            array_push($block_1_array, $temp_array);
-        }
-        $json_block_1 = json_encode($block_1_array);
+        // Get block data
+        $block_1 = $data->block_1;
+        $block_2 = $data->block_2;
+        $block_3 = $data->block_3;
+        $block_4 = $data->block_4;
+        $block_5 = $data->block_5;
+        $block_6 = $data->block_6;
 
-        // Block 2
-        $block_2_strings = explode("\n", $data->block_2_tasks);
-        $block_2_array = array();
-        foreach ($block_2_strings as $string) {
-            $temp_array = array();
-            $temp_array[0] = $string;
-            $temp_array[1] = 0;
-            array_push($block_2_array, $temp_array);
-        }
-        $json_block_2 = json_encode($block_2_array);
-
-        // Block 3
-        $block_3_strings = explode("\n", $data->block_3_tasks);
-        $block_3_array = array();
-        foreach ($block_3_strings as $string) {
-            $temp_array = array();
-            $temp_array[0] = $string;
-            $temp_array[1] = 0;
-            array_push($block_3_array, $temp_array);
-        }
-        $json_block_3 = json_encode($block_3_array);
-
-        // Block 4
-        $block_4_strings = explode("\n", $data->block_4_tasks);
-        $block_4_array = array();
-        foreach ($block_4_strings as $string) {
-            $temp_array = array();
-            $temp_array[0] = $string;
-            $temp_array[1] = 0;
-            array_push($block_4_array, $temp_array);
-        }
-        $json_block_4 = json_encode($block_4_array);
-
-        // Block 5
-        $block_5_strings = explode("\n", $data->block_5_tasks);
-        $block_5_array = array();
-        foreach ($block_5_strings as $string) {
-            $temp_array = array();
-            $temp_array[0] = $string;
-            $temp_array[1] = 0;
-            array_push($block_5_array, $temp_array);
-        }
-        $json_block_5 = json_encode($block_5_array);
-
-        // Block 6
-        $block_6_strings = explode("\n", $data->block_6_tasks);
-        $block_6_array = array();
-        foreach ($block_6_strings as $string) {
-            $temp_array = array();
-            $temp_array[0] = $string;
-            $temp_array[1] = 0;
-            array_push($block_6_array, $temp_array);
-        }
-        $json_block_6 = json_encode($block_6_array);
-
+        // Save
         $planner->targets = $json_targets;
-        $planner->block_1_tasks = $json_block_1;
-        $planner->block_2_tasks = $json_block_2;
-        $planner->block_3_tasks = $json_block_3;
-        $planner->block_4_tasks = $json_block_4;
-        $planner->block_5_tasks = $json_block_5;
-        $planner->block_6_tasks = $json_block_6;
+        $planner->block_1_tasks = $block_1;
+        $planner->block_2_tasks = $block_2;
+        $planner->block_3_tasks = $block_3;
+        $planner->block_4_tasks = $block_4;
+        $planner->block_5_tasks = $block_5;
+        $planner->block_6_tasks = $block_6;
 
         $planner->save();
 
-        return redirect(url('/members/planner'));
+        return response()->json(['success' => 'Planner successfully created.'], 200);
     }
 
     public function update(Request $data) {
@@ -195,13 +138,17 @@ class PlannerController extends Controller
             $new_block_1 = array();
         
             foreach($block_1 as $task) {
+                // Create temporary array
                 $temp_array = array();
+
+                // Get the task name
                 $temp_array[0] = $task[0];
                 if (in_array((string)$i, $data->block_1_complete)) {
                     $temp_array[1] = 1;
                 } else {
                     $temp_array[1] = 0;
                 }
+                $temp_array[2] = $task[2];
                 array_push($new_block_1, $temp_array);
                 $i += 1;
             }
@@ -216,13 +163,17 @@ class PlannerController extends Controller
             $new_block_2 = array();
         
             foreach($block_2 as $task) {
+                // Create temporary array
                 $temp_array = array();
+
+                // Get the task name
                 $temp_array[0] = $task[0];
                 if (in_array((string)$i, $data->block_2_complete)) {
                     $temp_array[1] = 1;
                 } else {
                     $temp_array[1] = 0;
                 }
+                $temp_array[2] = $task[2];
                 array_push($new_block_2, $temp_array);
                 $i += 1;
             }
@@ -245,6 +196,7 @@ class PlannerController extends Controller
                 } else {
                     $temp_array[1] = 0;
                 }
+                $temp_array[2] = $task[2];
                 array_push($new_block_3, $temp_array);
                 $i += 1;
             }
@@ -266,6 +218,7 @@ class PlannerController extends Controller
                 } else {
                     $temp_array[1] = 0;
                 }
+                $temp_array[2] = $task[2];
                 array_push($new_block_4, $temp_array);
                 $i += 1;
             }
@@ -287,6 +240,7 @@ class PlannerController extends Controller
                 } else {
                     $temp_array[1] = 0;
                 }
+                $temp_array[2] = $task[2];
                 array_push($new_block_5, $temp_array);
                 $i += 1;
             }
@@ -308,6 +262,7 @@ class PlannerController extends Controller
                 } else {
                     $temp_array[1] = 0;
                 }
+                $temp_array[2] = $task[2];
                 array_push($new_block_6, $temp_array);
                 $i += 1;
             }

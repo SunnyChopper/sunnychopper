@@ -55,57 +55,74 @@
 								<?php $timestamp = strtotime($planner->start_time); ?>
 								<h5 class="mb-2">{{ date('h:i A', $timestamp) }} to {{ date('h:i A', $timestamp + 10800) }}:</h5>
 								<table class="table table-striped">
-									<thead>
-										<tr>
-											<th>Task</th>
-											<th>Completed</th>
-											<th></th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php $i = 0; ?>
-										@foreach(json_decode($planner->block_1_tasks) as $task)
-										<tr>
-											<td>{{ $task[0] }}</td>
-											@if($task[1] == 0)
-											<td>No</td>
-											@else
-											<td>Yes</td>
-											@endif
-											<td><input type="checkbox" <?php if ($task[1] == 1) { echo "checked"; } ?> name="block_1_complete[]" value="{{ $i }}"> <span class="pl-1">Mark as complete</span></td>
-											<?php $i += 1; ?>
-										</tr>
-										@endforeach
-									</tbody>
-								</table>
+								<thead>
+									<tr>
+										<th>Task</th>
+										<th>RICE Score</th>
+										<th>Completed</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php $i = 0; ?>
+									@foreach(json_decode($planner->block_1_tasks) as $task)
+									<tr>
+										<td>{{ $task[0] }}</td>
+
+										@if(isset($task[2]))
+										<td>{{ $task[2] }}</td>
+										@else
+										<td>N/A</td>
+										@endif
+
+										@if($task[1] == 0)
+										<td>No</td>
+										@else
+										<td>Yes</td>
+										@endif
+
+										<td><input type="checkbox" <?php if ($task[1] == 1) { echo "checked"; } ?> name="block_1_complete[]" value="{{ $i }}"> <span class="pl-1">Mark as complete</span></td>
+										<?php $i += 1; ?>
+									</tr>
+									@endforeach
+								</tbody>
+							</table>
 							</div>
 
 							<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 								<h5 class="mb-2">{{ date('h:i A', $timestamp + 10800) }} to {{ date('h:i A', $timestamp + 21600) }}:</h5>
 								<table class="table table-striped">
-									<thead>
-										<tr>
-											<th>Task</th>
-											<th>Completed</th>
-											<th></th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php $i = 0; ?>
-										@foreach(json_decode($planner->block_2_tasks) as $task)
-										<tr>
-											<td>{{ $task[0] }}</td>
-											@if($task[1] == 0)
-											<td>No</td>
-											@else
-											<td>Yes</td>
-											@endif
-											<td><input type="checkbox" <?php if ($task[1] == 1) { echo "checked"; } ?> name="block_2_complete[]" value="{{ $i }}"> <span class="pl-1">Mark as complete</span></td>
-											<?php $i += 1; ?>
-										</tr>
-										@endforeach
-									</tbody>
-								</table>
+								<thead>
+									<tr>
+										<th>Task</th>
+										<th>RICE Score</th>
+										<th>Completed</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php $i = 0; ?>
+									@foreach(json_decode($planner->block_2_tasks) as $task)
+									<tr>
+										<td>{{ $task[0] }}</td>
+										
+										@if(isset($task[2]))
+										<td>{{ $task[2] }}</td>
+										@else
+										<td>N/A</td>
+										@endif
+
+										@if($task[1] == 0)
+										<td>No</td>
+										@else
+										<td>Yes</td>
+										@endif
+										<td><input type="checkbox" <?php if ($task[1] == 1) { echo "checked"; } ?> name="block_2_complete[]" value="{{ $i }}"> <span class="pl-1">Mark as complete</span></td>
+										<?php $i += 1; ?>
+									</tr>
+									@endforeach
+								</tbody>
+							</table>
 							</div>
 						</div>
 
@@ -116,6 +133,7 @@
 									<thead>
 										<tr>
 											<th>Task</th>
+											<th>RICE Score</th>
 											<th>Completed</th>
 											<th></th>
 										</tr>
@@ -125,6 +143,13 @@
 										@foreach(json_decode($planner->block_3_tasks) as $task)
 										<tr>
 											<td>{{ $task[0] }}</td>
+											
+											@if(isset($task[2]))
+											<td>{{ $task[2] }}</td>
+											@else
+											<td>N/A</td>
+											@endif
+
 											@if($task[1] == 0)
 											<td>No</td>
 											@else
@@ -144,6 +169,7 @@
 									<thead>
 										<tr>
 											<th>Task</th>
+											<th>RICE Score</th>
 											<th>Completed</th>
 											<th></th>
 										</tr>
@@ -153,6 +179,13 @@
 										@foreach(json_decode($planner->block_4_tasks) as $task)
 										<tr>
 											<td>{{ $task[0] }}</td>
+											
+											@if(isset($task[2]))
+											<td>{{ $task[2] }}</td>
+											@else
+											<td>N/A</td>
+											@endif
+
 											@if($task[1] == 0)
 											<td>No</td>
 											@else
@@ -174,6 +207,7 @@
 									<thead>
 										<tr>
 											<th>Task</th>
+											<th>RICE Score</th>
 											<th>Completed</th>
 											<th></th>
 										</tr>
@@ -183,6 +217,13 @@
 										@foreach(json_decode($planner->block_5_tasks) as $task)
 										<tr>
 											<td>{{ $task[0] }}</td>
+
+											@if(isset($task[2]))
+											<td>{{ $task[2] }}</td>
+											@else
+											<td>N/A</td>
+											@endif
+
 											@if($task[1] == 0)
 											<td>No</td>
 											@else
@@ -202,6 +243,7 @@
 									<thead>
 										<tr>
 											<th>Task</th>
+											<th>RICE Score</th>
 											<th>Completed</th>
 											<th></th>
 										</tr>
@@ -211,6 +253,13 @@
 										@foreach(json_decode($planner->block_6_tasks) as $task)
 										<tr>
 											<td>{{ $task[0] }}</td>
+
+											@if(isset($task[2]))
+											<td>{{ $task[2] }}</td>
+											@else
+											<td>N/A</td>
+											@endif
+											
 											@if($task[1] == 0)
 											<td>No</td>
 											@else

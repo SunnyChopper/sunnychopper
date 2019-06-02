@@ -78,7 +78,6 @@ Route::post('/vote/create', 'VotingController@create');
 Route::get('/members/planner', 'PlannerController@index');
 Route::get('/members/planner/new', 'PlannerController@new');
 Route::get('/members/planner/stats', 'PlannerController@stats');
-Route::post('/members/planner/create', 'PlannerController@create');
 Route::post('/members/planner/update', 'PlannerController@update');
 Route::get('/members/planner/view/{planner_id}', 'PlannerController@view');
 

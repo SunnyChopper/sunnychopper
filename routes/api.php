@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('/members/planner/create', 'PlannerController@create');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
 	return $request->user();
 });

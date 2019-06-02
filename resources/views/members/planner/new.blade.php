@@ -6,7 +6,7 @@
 	<div class="container pt-64 pb-64">
 		<div class="row justify-content-center">
 			<div class="col-12">
-				<form action="/members/planner/create" id="create_planner_form" method="POST">
+				<form id="create_planner_form" method="POST">
 					{{ csrf_field() }}
 					<h3>Meta Information</h3>
 					@if(session()->has('error'))
@@ -26,16 +26,13 @@
 					</div>
 
 					<div class="form-group row">
-						<div class="col-12">
-							<label>Quote of the Day:</label>
-							<textarea class="form-control" name="qotd" form="create_planner_form" rows="4" required></textarea>
-						</div>
-					</div>
-
-					<div class="form-group row">
 						<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+							<label>Quote of the Day:</label>
+							<textarea class="form-control" name="qotd" form="create_planner_form" rows="6" required></textarea>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-16-mobile">
 							<label>Targets (one per line):</label>
-							<textarea class="form-control" name="targets" form="create_planner_form" rows="8" required></textarea>
+							<textarea class="form-control" name="targets" form="create_planner_form" rows="6" required></textarea>
 						</div>
 					</div>
 
@@ -169,7 +166,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+						<div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-16-mobile">
 							<div class="grey-box">
 								<label>Block 2: <span id="block_2_time"></span></label>
 								
@@ -227,7 +224,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+						<div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-16-mobile">
 							<div class="grey-box">
 								<label>Block 4: <span id="block_4_time"></span></label>
 								
@@ -285,7 +282,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-6 col-md-6 col-sm-12 col-12">
+						<div class="col-lg-6 col-md-6 col-sm-12 col-12 mt-16-mobile">
 							<div class="grey-box">
 								<label>Block 6: <span id="block_6_time"></span></label>
 								
@@ -316,7 +313,9 @@
 
 					<div class="form-group row mt-64">
 						<div class="col-12">
-							<input type="submit" class="genric-btn primary rounded centered" value="Create Planner">
+							<p class="red text-center" id="validation_error" style="display: none;">Please fill out all fields.</p>
+							<p class="red text-center" id="error" style="display: none;">Please fill out all fields.</p>
+							<button type="button" class="submit_button genric-btn primary rounded centered">Create Planner</button>
 						</div>
 					</div>
 
@@ -332,6 +331,122 @@
 		$(document).on('click', '.delete_row_button', function(){ 
 		    $(this).closest('tr').remove();
 		    return false;
+		});
+
+		$('.submit_button').on('click', function() {
+			// Validate
+			if ($("input[name=start_time]").val() != "" && $("input[name=planner_date]").val() != "" && $("textarea[name=qotd]").val() != "" && $("textarea[name=targets]").val() != "") {
+				// Hide errors
+				$("#validation_error").hide();
+				$("#error").hide();
+
+				// Gather meta-information
+				var start_time = $("input[name=start_time]").val();
+				var planner_date = $("input[name=planner_date]").val();
+				var qotd = $("textarea[name=qotd]").val();
+				var targets = $("textarea[name=targets]").val();
+				var user_id = "{{ Auth::id() }}";
+
+				// Gather table data
+				var block_1 = Array();
+				$('#block_1 > tbody  > tr').each(function() {
+					var task = $(this).children('td')[0].innerText;
+					var completion = 0;
+					var rice_score = $(this).children('td')[1].innerText;
+
+					var temp_array = [task, completion, rice_score];
+					block_1.push(temp_array);
+				});
+				var block_1_json = JSON.stringify(block_1);
+
+				var block_2 = Array();
+				$('#block_2 > tbody  > tr').each(function() {
+					var task = $(this).children('td')[0].innerText;
+					var completion = 0;
+					var rice_score = $(this).children('td')[1].innerText;
+
+					var temp_array = [task, completion, rice_score];
+					block_2.push(temp_array);
+				});
+				var block_2_json = JSON.stringify(block_2);
+
+				var block_3 = Array();
+				$('#block_3 > tbody  > tr').each(function() {
+					var task = $(this).children('td')[0].innerText;
+					var completion = 0;
+					var rice_score = $(this).children('td')[1].innerText;
+
+					var temp_array = [task, completion, rice_score];
+					block_3.push(temp_array);
+				});
+				var block_3_json = JSON.stringify(block_3);
+
+				var block_4 = Array();
+				$('#block_4 > tbody  > tr').each(function() {
+					var task = $(this).children('td')[0].innerText;
+					var completion = 0;
+					var rice_score = $(this).children('td')[1].innerText;
+
+					var temp_array = [task, completion, rice_score];
+					block_4.push(temp_array);
+				});
+				var block_4_json = JSON.stringify(block_4);
+
+				var block_5 = Array();
+				$('#block_5 > tbody  > tr').each(function() {
+					var task = $(this).children('td')[0].innerText;
+					var completion = 0;
+					var rice_score = $(this).children('td')[1].innerText;
+
+					var temp_array = [task, completion, rice_score];
+					block_5.push(temp_array);
+				});
+				var block_5_json = JSON.stringify(block_5);
+
+				var block_6 = Array();
+				$('#block_6 > tbody  > tr').each(function() {
+					var task = $(this).children('td')[0].innerText;
+					var completion = 0;
+					var rice_score = $(this).children('td')[1].innerText;
+
+					var temp_array = [task, completion, rice_score];
+					block_6.push(temp_array);
+				});
+				var block_6_json = JSON.stringify(block_6);
+
+				$.ajax({
+					url: '/api/members/planner/create',
+					type: 'POST',
+					data: {
+						'_token' : '{{ csrf_token() }}',
+						'start_time' : start_time,
+						'planner_date' : planner_date,
+						'qotd' : qotd,
+						'targets' : targets,
+						'user_id' : user_id,
+						'block_1' : block_1_json,
+						'block_2' : block_2_json,
+						'block_3' : block_3_json,
+						'block_4' : block_4_json,
+						'block_5' : block_5_json,
+						'block_6' : block_6_json
+					},
+					dataType: 'json',
+					success: function(data) {
+						if (data.hasOwnProperty('success')) {
+							window.location.href = "{{ url('/members/planner') }}";
+						} else {
+							$("#error").html(data['error']);
+							$("#error").show();
+						}
+					},
+			        error: function (xhr, textStatus, errorThrown) {
+			            alert(textStatus);
+			        }
+				});
+			} else {
+				$("#validation_error").show();
+			}
 		});
 
 		var tasks_array = Array();
