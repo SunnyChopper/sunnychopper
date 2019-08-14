@@ -9,7 +9,7 @@
 		<meta name="author" content="colorlib">
 
 		<!-- Meta Description -->
-		<meta name="description" content="{{ $og["desccription"] }}">
+		<meta name="description" content="{{ $og["description"] }}">
 
 		<!-- Meta Keyword -->
 		<meta name="keywords" content="tech entrepreneur, technology entrepreneur, tech business, how to become a tech entrepreneur">
