@@ -171,7 +171,7 @@ class PagesController extends Controller
 		$og = array(
 			"title" => $page_header,
 			"description" => "Get access to over 500+ ready-to-use UI components, themes, and tools for web developers to launch your next startup faster.",
-			"image" => "https://i-lab.harvard.edu/innolabs/wp-content/uploads/sites/5/2017/03/intro-to-git-and-front-end-coding-1024x577.jpg".
+			"image" => "https://i-lab.harvard.edu/innolabs/wp-content/uploads/sites/5/2017/03/intro-to-git-and-front-end-coding-1024x577.jpg",
 			"url" => "https://www.sunnychopper.com/dev-tools"
 		);
 
