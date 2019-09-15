@@ -29,6 +29,7 @@ Route::get('/books/{book_id}', 'PagesController@view_book_summary');
 Route::get('/dev-tools', 'PagesController@dev_tools');
 Route::get('/forex', 'PagesController@forex_tools');
 Route::get('/tennis', 'PagesController@tennis');
+Route::get('/biz-starter-kits', 'PagesController@biz_starter_kits');
 
 // Admin backend site
 Route::get('/admin', 'AdminController@login');

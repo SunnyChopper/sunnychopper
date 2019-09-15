@@ -85,6 +85,15 @@
 		})(window,document,'script','dataLayer','GTM-NQCC2NH');</script>
 		<!-- End Google Tag Manager -->
 
+		<style type="text/css">
+			.about-content {
+				margin-top: 0px;
+			}
+
+			@media screen (max-width: 480px) {
+
+			}
+		</style>
 	</head>
 	<body>
 		<!-- Google Tag Manager (noscript) -->
@@ -94,13 +103,11 @@
 		@include('layouts.banner')
 
 		<div class="container pt-64 pb-64">
-			<div class="row justify-content-center" style="display: flex;">
-				<div class="col-lg-6 col-md-6 col-sm-12 col-12" style="margin: auto;">
-					<h2 class="light-font">Launch More MVPs in Less Time and Find Winning Products Quicker</h2>
-				</div>
-
-				<div class="col-lg-6 col-md-6 col-sm-12 col-12" style="margin: auto;">
-					<img src="http://www.monitis.com/blog/wp-content/uploads/2017/03/megalist_frontend_article.png" class="regular-image-100 mt-32-mobile">
+			<div class="row justify-content-center">
+				<div class="col-lg-9 col-md-9 col-sm-10 col-12">
+					<h1 class="text-center light-font">Starting an Online Business Simplified for You</h1>
+					<h3 class="text-center mt-8 ultra-light-font">Gain access to business starter kits that come with pre-made websites, content templates, and much more</h3>
+					<img src="https://i.pinimg.com/originals/86/fa/f3/86faf30598360ff6e1c5e747689286ca.gif" class="regular-image-100 mt-32">
 				</div>
 			</div>
 		</div>

@@ -167,7 +167,7 @@ class PagesController extends Controller
 	}
 
 	public function dev_tools() {
-		$page_header = "500+ UI Components and Themes for Web Developers";
+		$page_header = "Test Your Online Business Ideas Faster";
 		$og = array(
 			"title" => $page_header,
 			"description" => "Get access to over 500+ ready-to-use UI components, themes, and tools for web developers to launch your next startup faster.",
@@ -176,6 +176,18 @@ class PagesController extends Controller
 		);
 
 		return view('pages.dev-tools')->with('page_header', $page_header)->with('og', $og);
+	}
+
+	public function biz_starter_kits() {
+		$page_header = "Launch Your Next Online Business Faster and with Confidence";
+		$og = array(
+			"title" => $page_header,
+			"description" => "Get access to business ideas that come with a logo, a website, and systems already made for you. You just have to run the business",
+			"image" => "https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/487612/910/607/m1/fpnw/wm0/big_set_icon_40-.jpg",
+			"url" => "https://www.sunnychopper.com/biz-starter-kits"
+		);
+
+		return view('pages.biz-starter-kits')->with('page_header', $page_header)->with('og', $og);
 	}
 
 	public function profile() {
