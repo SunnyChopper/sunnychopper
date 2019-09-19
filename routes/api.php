@@ -38,3 +38,7 @@ Route::post('/send-notification/{id}', function($id, Request $request){
 		'success' => true
 	]);
 });
+
+// Leads functions
+Route::get('/leads/check', 'LeadsController@email_check');
+Route::post('/leads/submit', 'LeadsController@create');
