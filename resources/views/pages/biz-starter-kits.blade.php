@@ -140,7 +140,7 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-9 col-md-9 col-sm-10 col-12">
 					<h2 class="text-center title heavy-font">Starting an Online Business Simplified for You</h2>
-					<h3 class="text-center subtitle mt-8 light-font" style="line-height: 1.5em !important;">Do you feel stuck as an entrepreneur? Not sure what business to start or where to even begin learning? Our Business Starter Kits can help.</h3>
+					<h4 class="text-center subtitle mt-8 light-font" style="line-height: 1.5em !important;">Do you feel stuck as an entrepreneur? Not sure what business to start or where to even begin learning? Our Business Starter Kits can help.</h4>
 					<img src="https://i.pinimg.com/originals/86/fa/f3/86faf30598360ff6e1c5e747689286ca.gif" class="regular-image-100 mt-16">
 					
 				</div>
@@ -150,8 +150,8 @@
 				<div class="col-lg-9 col-md-7 col-sm-8 col-12">
 					<div class="grey-box">
 						<h5 class="text-center mb-1">Get Exclusive Access to Beta</h5>
-						<p class="text-center mb-1">Enter in your email below and we'll send you an invitation code for free beta access.</p>
-						<a href="#bottom" class="genric-btn danger rounded centered" style="font-size: 16px;">Join the Beta Program <i class="fa fa-arrow-circle-right ml-1"></i></a>
+						<p class="text-center mb-3 mb-1-mobile">Enter in your email below and we'll send you an invitation code for free beta access.</p>
+						<a href="#bottom" class="genric-btn danger rounded centered" style="font-size: 14px;">Join the Beta Program <i class="fa fa-arrow-circle-right ml-1"></i></a>
 					</div>
 				</div>
 			</div>
@@ -172,7 +172,7 @@
 
 					<div class="col-lg-9 col-md-9 col-sm-12 col-12" style="margin: auto;">
 						<h4 class="text-center-mobile mt-16-mobile">Identify Your Strengths and Weaknesses</h4>
-						<p class="text-center-mobile mt-1 mt-8-mobile mb-0">When you register, you will take a short personality quiz that will help you identify potential strengths and weaknesses. We will use this information to recommend starter kits that match your strengths.</p>
+						<p class="text-center-mobile mt-1 mt-8-mobile mb-0">Take a short survey that will help you find your strengths and weaknesses. We will give you Starter Kits that match your strengths. This will help you find a winning idea faster!</p>
 					</div>
 				</div>
 
@@ -193,8 +193,8 @@
 					</div>
 
 					<div class="col-lg-9 col-md-9 col-sm-12 col-12" style="margin: auto;">
-						<h4 class="text-center-mobile mt-16-mobile">Get Feedback from Your Efforts</h4>
-						<p class="text-center-mobile mt-1 mt-8-mobile mb-0">Collect data as you're executing. The data will help you figure out what direction you need to take your business idea. Without this data, we lose the ability to make logical business decisions.</p>
+						<h4 class="text-center-mobile mt-16-mobile">Get Feedback from Your Efforts to Make Better Decisions</h4>
+						<p class="text-center-mobile mt-1 mt-8-mobile mb-0">Gather data as you are working. This data will help you make important decisions for your business. Without this data, you will lose the ability to make good decisions.</p>
 					</div>
 				</div>
 
@@ -204,7 +204,7 @@
 					</div>
 
 					<div class="col-lg-9 col-md-9 col-sm-12 col-12" style="margin: auto;">
-						<h4 class="text-center-mobile mt-16-mobile">Take Action Based on Intelligent Data</h4>
+						<h4 class="text-center-mobile mt-16-mobile">Take Action Based on Your Data and Scale</h4>
 						<p class="text-center-mobile mt-1 mt-8-mobile mb-0">Based on the data collected, the starter kit will help you take action and make smart decisions. This will help you find a winning product or service faster. The faster you go, the faster you find a winning idea.</p>
 					</div>
 				</div>
@@ -225,22 +225,22 @@
 			</div>
 
 			<div class="row mt-64">
-				<div class="col-lg-4 col-md-4 col-sm-12 col-12">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-12" style="background: hsl(0, 0%, 98%); padding: 32px;">
 					<img src="https://image.flaticon.com/icons/svg/1055/1055644.svg" class="regular-image-50 centered">
-					<h4 class="text-center mt-16">Checklists/Guides</h4>
-					<p class="text-center mt-2 mb-0">Follow the same business frameworks used by multiple Fortune 500 companies.</p>
+					<h4 class="text-center mt-16">Step-by-Step Guides</h4>
+					<p class="text-center mt-2 mb-0">The guides are made to help you launch your idea faster. Work through each one to make better decisions for your business.</p>
 				</div>
 
-				<div class="col-lg-4 col-md-4 col-sm-12 col-12 mt-32-mobile">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-12 mt-32-mobile" style="background: hsl(0, 0%, 98%); padding: 32px;">
 					<img src="https://image.flaticon.com/icons/svg/1149/1149168.svg" class="regular-image-50 centered">
 					<h4 class="text-center mt-16">Website/App</h4>
-					<p class="text-center mt-2 mb-0">Based on the starter kit, get a pre-made website or app that you can modify.</p>
+					<p class="text-center mt-2 mb-0">Based on the starter kit, get a website or app that you can change. We can also help you with hosting for no extra charge.</p>
 				</div>
 
-				<div class="col-lg-4 col-md-4 col-sm-12 col-12 mt-32-mobile">
+				<div class="col-lg-4 col-md-4 col-sm-12 col-12 mt-32-mobile" style="background: hsl(0, 0%, 98%); padding: 32px;">
 					<img src="https://image.flaticon.com/icons/svg/1085/1085728.svg" class="regular-image-50 centered">
-					<h4 class="text-center mt-16">Business Templates</h4>
-					<p class="text-center mt-2 mb-0">Create custom marketing/business strategies based on your situation.</p>
+					<h4 class="text-center mt-16">Strategy Templates</h4>
+					<p class="text-center mt-2 mb-0">Create business plans that match up with your strengths. No more cookie cutter plans that don't always work.</p>
 				</div>
 			</div>
 
@@ -264,9 +264,10 @@
 				</div>
 
 				<div class="col-lg-6 col-md-6 col-sm-12 col-12" style="margin: auto;">
-					<h3 class="text-center-mobile mt-32-mobile" style="font-weight: 400; line-height: 1.5em !important;">Don't Just Feel Like You're Getting Better, Actually Know That You Are Improving</h3>
-					<p class="text-center-mobile mt-3" style="line-height: 1.5em !important;">Many of us don't start entrepreneurship because we never know if we are improving or not. There's no one there to show you that you are indeed improving. That's not the case here.</p>
-					<p class="text-center-mobile" style="line-height: 1.5em !important;">With these starter kits, you will know that you're improving. You don't have to guess and "feel it out". As you move through the steps of each starter kit, you'll be asked to provide data. This data will be used to create intelligent decisions about which direction to take your starter kit.</p>
+					<h3 class="text-center-mobile mt-32-mobile" style="font-weight: 400; line-height: 1.5em !important;">Don't Just Feel Like You're Getting Better, Actually Know That You Are Getting Better</h3>
+					<p class="text-center-mobile mt-3" style="line-height: 1.5em !important;">Many of us don't start entrepreneurship because we never know if we are improving or not. There's no one there to show you that you are improving. That's not the case here.</p>
+					<p class="text-center-mobile" style="line-height: 1.5em !important;">You will know when you are improving. You no longer have to guess and "feel it out". Feel confidence and clarity in the actions you take.</p>
+					<p class="text-center-mobile" style="line-height: 1.5em !important;">As you move through a starter kit, you will gather data about the actions you take and the results they create. You will use this data to make smart decisions for your business idea.</p>
 					<a href="#bottom" class="genric-btn danger rounded centered" style="font-size: 14px;">Get Your Invite Code <i class="fa fa-arrow-circle-right ml-1"></i></a>
 				</div>
 			</div>
@@ -277,7 +278,7 @@
 				<div class="row">
 					<div class="col-12">
 						<h2 class="text-center">Get Your Exclusive Invite Code to Access Beta Program</h2>
-						<p class="text-center mt-2" style="font-size: 18px; line-height: 1.75em;">Enter your email below to request access to an invite code. <strong><u>The beta program is free to access.</u></strong> Beta testers will get 3 months free once we launch. Afterwards, it's just <b class="green">$27/<small>mo</small></b> to keep your access to your starter kits and work.</p>
+						<p class="text-center mt-2" style="font-size: 18px; line-height: 1.75em;">Enter your email below to request access to an invite code. <strong><u>The beta program is free to access.</u></strong> Beta testers will get 3 months free once we launch. Afterwards, it is <b class="green">$27/<small>mo</small></b> to keep your access to your starter kits and save your work.</p>
 					</div>
 				</div>
 
